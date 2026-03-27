@@ -240,6 +240,48 @@ a {
   max-width: 600px;
 }
 
+.hero.hero-home {
+  min-height: 92vh;
+}
+
+.hero-home .hero-container {
+  text-align: center;
+  max-width: 900px;
+}
+
+.hero-home .hero-eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-md);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.92);
+  font-size: 0.95rem;
+  background: rgba(10,22,40,0.35);
+}
+
+.hero-home h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  margin-bottom: var(--space-sm);
+}
+
+.hero-home .hero-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 760px;
+}
+
+.hero-home .hero-cta-group {
+  justify-content: center;
+}
+
+.hero-home .hero-logo-badge {
+  width: 96px;
+  margin: 0 auto var(--space-md);
+  border-radius: 14px;
+  box-shadow: var(--shadow-md);
+}
+
 .hero-features {
   display: flex;
   gap: var(--space-lg);
@@ -339,6 +381,12 @@ a {
   color: var(--secondary);
 }
 
+.hero-cta-group {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
 .btn-white {
   background: var(--white);
   color: var(--secondary);
@@ -387,6 +435,94 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--space-lg);
+}
+
+.program-band {
+  position: relative;
+  min-height: 58vh;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  background-size: cover;
+  background-position: center;
+}
+
+.program-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, rgba(10, 22, 40, 0.86) 18%, rgba(10, 22, 40, 0.56) 58%, rgba(10, 22, 40, 0.3) 100%);
+}
+
+.program-band .container {
+  position: relative;
+  z-index: 1;
+}
+
+.program-band-content {
+  max-width: 560px;
+}
+
+.program-band-label {
+  color: rgba(255,255,255,0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+  margin-bottom: var(--space-xs);
+}
+
+.program-band h2 {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  margin-bottom: var(--space-sm);
+}
+
+.program-band p {
+  color: rgba(255,255,255,0.9);
+  margin-bottom: var(--space-lg);
+  font-size: 1.05rem;
+}
+
+.program-band-kickboxing {
+  background-image: url('../kickboxing-card.jpg');
+}
+
+.program-band-bjj {
+  background-image: url('../jiu-jitsu.jpg');
+}
+
+.program-band-kids {
+  background-image: url('../kids-bjj.jpg');
+}
+
+.program-band .btn-white {
+  box-shadow: 0 8px 26px rgba(0,0,0,0.25);
+}
+
+.home-video-section {
+  background: linear-gradient(180deg, var(--gray-100) 0%, #eef1f5 100%);
+}
+
+.home-video-wrap {
+  max-width: 940px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-200);
+}
+
+.home-video-wrap video {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.home-video-caption {
+  padding: var(--space-md);
+  color: var(--gray-600);
+  text-align: center;
 }
 
 .card {
@@ -767,6 +903,31 @@ footer {
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.5rem;
+  }
+
+  .hero.hero-home {
+    min-height: 86vh;
+  }
+
+  .hero-home .hero-container {
+    text-align: center;
+  }
+
+  .hero-home .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-home .hero-cta-group {
+    justify-content: center;
+  }
+
+  .program-band {
+    min-height: 52vh;
+  }
+
+  .program-band::before {
+    background: linear-gradient(140deg, rgba(10, 22, 40, 0.88) 18%, rgba(10, 22, 40, 0.64) 72%, rgba(10, 22, 40, 0.48) 100%);
   }
   
   .hero-features {

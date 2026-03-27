@@ -81,7 +81,7 @@
         <li><a href="instructors.html">Instructors</a></li>
         <li><a href="class-schedule.html">Schedule</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="free-trial.html" class="nav-cta">Start Free Trial</a></li>
+        <li><a href="book-free-class.html" class="nav-cta">Start Free Trial</a></li>
       </ul>
       <button class="mobile-menu-btn" aria-label="Open Menu">☰</button>
     </div>
@@ -96,184 +96,73 @@
       <li><a href="instructors.html">Instructors</a></li>
       <li><a href="class-schedule.html">Schedule</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="free-trial.html" class="nav-cta">Start Free Trial</a></li>
+      <li><a href="book-free-class.html" class="nav-cta">Start Free Trial</a></li>
     </ul>
   </div>
 
   <!-- Hero Section -->
-  <section class="hero" style="background-image: url('gym-1.jpg');">
+  <section class="hero hero-home" style="background-image: url('gym-1.jpg');">
     <div class="hero-container">
       <div class="hero-content">
-        <span class="hero-badge">🔥 Goleta's Premier Martial Arts Academy</span>
-        <h1>Master Brazilian Jiu-Jitsu, Kickboxing & Boxing in Goleta, CA</h1>
-        <p class="hero-subtitle">Transform your body and mind with world-class martial arts training. Whether you want fitness, self-defense, or competition, our 25+ years of experience will get you there.</p>
-        
-        <div class="hero-features">
-          <div class="hero-feature">
-            <div class="hero-feature-icon">✓</div>
-            <span>7-Day Free Trial</span>
-          </div>
-          <div class="hero-feature">
-            <div class="hero-feature-icon">✓</div>
-            <span>All Ages & Levels</span>
-          </div>
-          <div class="hero-feature">
-            <div class="hero-feature-icon">✓</div>
-            <span>Expert Black Belt Instructors</span>
-          </div>
-        </div>
+        <img class="hero-logo-badge" src="logo.webp" alt="101 Jiu Jitsu & Kickboxing logo" width="96" height="96">
+        <p class="hero-eyebrow">A Mixed Martial Arts Academy For The Entire Family</p>
+        <h1>101 Jiu Jitsu & Kickboxing</h1>
+        <p class="hero-subtitle">Formerly Paragon Goleta. Same team, same location, same commitment. Build confidence, discipline, and real skills with a community that welcomes all ages and levels.</p>
 
         <div class="hero-cta-group">
-          <a href="free-trial.html" class="btn btn-primary">Start Your Free Week →</a>
-          <a href="class-schedule.html" class="btn btn-secondary">View Class Schedule</a>
-        </div>
-
-        <div class="hero-stats" style="margin-top: var(--space-2xl); padding-top: var(--space-xl);">
-          <div class="hero-stat">
-            <div class="hero-stat-number">25+</div>
-            <div class="hero-stat-label">Years Experience</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-number">5000+</div>
-            <div class="hero-stat-label">Students Trained</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-number">4.9★</div>
-            <div class="hero-stat-label">Google Rating</div>
-          </div>
+          <a href="book-free-class.html" class="btn btn-primary">Try A Free Class</a>
+          <a href="class-schedule.html" class="btn btn-secondary">View Schedule</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Programs Section -->
-  <section class="section" id="programs">
+  <section class="section home-video-section">
     <div class="container">
       <div class="section-header reveal">
-        <h2>Martial Arts Programs for Everyone</h2>
-        <p>From kids to adults, beginners to competitors — we have a program that fits your goals.</p>
+        <h2>Gym Highlights</h2>
+        <p>A real training clip from the current gym feed, now hosted directly on this dev site.</p>
       </div>
+      <div class="home-video-wrap reveal">
+        <video controls preload="metadata" poster="gym-2.jpg">
+          <source src="media/home-highlight.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="home-video-caption">Need a different clip? Replace <code>media/home-highlight.mp4</code> and this section updates automatically.</p>
+      </div>
+    </div>
+  </section>
 
-      <div class="card-grid">
-        <article class="card reveal">
-          <div class="card-image">
-            <img loading="lazy" src="jiu-jitsu.jpg" alt="Brazilian Jiu-Jitsu training in Goleta" width="800" height="533">
-          </div>
-          <div class="card-content">
-            <span class="card-tag">Most Popular</span>
-            <h3><a href="jiu-jitsu.html">Brazilian Jiu-Jitsu</a></h3>
-            <p>Master the art of leverage and submission. Perfect for self-defense, fitness, and competition. Gi and No-Gi classes available.</p>
-            <div style="display: flex; gap: 1rem; margin-top: 1rem; font-size: 0.875rem; color: var(--gray-600);">
-              <span>🎯 All Levels</span>
-              <span>📅 Daily</span>
-            </div>
-          </div>
-        </article>
+  <!-- Full Width Program Bands -->
+  <section class="program-band program-band-kickboxing">
+    <div class="container">
+      <div class="program-band-content reveal">
+        <p class="program-band-label">Program Spotlight</p>
+        <h2>Kickboxing</h2>
+        <p>High-energy classes for adults and teens focused on cardio, striking technique, and confidence under pressure.</p>
+        <a href="kickboxing.html" class="btn btn-white">Learn More</a>
+      </div>
+    </div>
+  </section>
 
-        <article class="card reveal">
-          <div class="card-image">
-            <img loading="lazy" src="kickboxing-card.jpg" alt="Adult kickboxing classes in Goleta" width="800" height="533">
-          </div>
-          <div class="card-content">
-            <span class="card-tag">Fitness Focus</span>
-            <h3><a href="kickboxing.html">Adult Kickboxing</a></h3>
-            <p>Burn up to 800 calories per class while learning real striking techniques. Get fit, relieve stress, and learn practical self-defense.</p>
-            <div style="display: flex; gap: 1rem; margin-top: 1rem; font-size: 0.875rem; color: var(--gray-600);">
-              <span>🔥 High Intensity</span>
-              <span>📅 6 Days/Week</span>
-            </div>
-          </div>
-        </article>
+  <section class="program-band program-band-bjj">
+    <div class="container">
+      <div class="program-band-content reveal">
+        <p class="program-band-label">Program Spotlight</p>
+        <h2>Brazilian Jiu Jitsu</h2>
+        <p>Build real grappling skill through fundamentals, positional control, and live training in a supportive team environment.</p>
+        <a href="jiu-jitsu.html" class="btn btn-white">Learn More</a>
+      </div>
+    </div>
+  </section>
 
-        <article class="card reveal">
-          <div class="card-image">
-            <img loading="lazy" src="mma.jpg" alt="Boxing training at 101 Jiu Jitsu" width="683" height="1024">
-          </div>
-          <div class="card-content">
-            <span class="card-tag">Striking Arts</span>
-            <h3><a href="boxing.html">Boxing Fundamentals</a></h3>
-            <p>Master the sweet science with perfect footwork, head movement, and punch combinations. Great for fitness or competitive goals.</p>
-            <div style="display: flex; gap: 1rem; margin-top: 1rem; font-size: 0.875rem; color: var(--gray-600);">
-              <span>🥊 All Levels</span>
-              <span>📅 Mon-Thu</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-image">
-            <img loading="lazy" src="wrestling.jpg" alt="Wrestling and grappling training" width="800" height="533">
-          </div>
-          <div class="card-content">
-            <span class="card-tag">Competition</span>
-            <h3><a href="wrestling.html">Wrestling</a></h3>
-            <p>Build explosive power and takedown skills. Our wrestling program complements BJJ perfectly for MMA and grappling competition.</p>
-            <div style="display: flex; gap: 1rem; margin-top: 1rem; font-size: 0.875rem; color: var(--gray-600);">
-              <span>💪 Advanced</span>
-              <span>📅 Tue/Thu</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-image">
-            <img loading="lazy" src="kids-bjj.jpg" alt="Kids martial arts classes in Goleta" width="800" height="1200">
-          </div>
-          <div class="card-content">
-            <span class="card-tag">Ages 4-17</span>
-            <h3><a href="kids-teens.html">Kids & Teens Martial Arts</a></h3>
-            <p>Build confidence, discipline, and respect. Our youth programs combine Jiu-Jitsu and Kickboxing in a fun, safe environment.</p>
-            <div style="display: flex; gap: 1rem; margin-top: 1rem; font-size: 0.875rem; color: var(--gray-600);">
-              <span>👶 Ages 4-17</span>
-              <span>📅 Mon-Sat</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-image">
-            <img loading="lazy" src="jiu-jitsu.jpg" alt="MMA training at 101 Jiu Jitsu" width="800" height="533">
-          </div>
-          <div class="card-content">
-            <span class="card-tag">Complete Training</span>
-            <h3><a href="mma-gym.html">MMA Training</a></h3>
-            <p>Train complete mixed martial arts combining striking, wrestling, and Brazilian Jiu-Jitsu. Become a well-rounded fighter.</p>
-            <div style="display: flex; gap: 1rem; margin-top: 1rem; font-size: 0.875rem; color: var(--gray-600);">
-              <span>👊 All Levels</span>
-              <span>📅 Multiple Classes</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-image">
-            <img loading="lazy" src="trx.jpg" alt="TRX suspension training in Goleta" width="800" height="533">
-          </div>
-          <div class="card-content">
-            <span class="card-tag">Strength</span>
-            <h3><a href="trx-training.html">TRX Training</a></h3>
-            <p>Suspension training that builds functional strength, core stability, and total body fitness using your own body weight.</p>
-            <div style="display: flex; gap: 1rem; margin-top: 1rem; font-size: 0.875rem; color: var(--gray-600);">
-              <span>💪 All Levels</span>
-              <span>📅 Tue/Thu/Sat</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-image">
-            <img loading="lazy" src="rocksteady.jpg" alt="Rocksteady Boxing program" width="800" height="533">
-          </div>
-          <div class="card-content">
-            <span class="card-tag">Specialized</span>
-            <h3><a href="rocksteady.html">Rocksteady Boxing</a></h3>
-            <p>Non-contact boxing program for Parkinson's disease and movement disorders. Improve balance, coordination, and quality of life.</p>
-            <div style="display: flex; gap: 1rem; margin-top: 1rem; font-size: 0.875rem; color: var(--gray-600);">
-              <span>🎯 Specialized</span>
-              <span>📅 Tue/Thu</span>
-            </div>
-          </div>
-        </article>
+  <section class="program-band program-band-kids">
+    <div class="container">
+      <div class="program-band-content reveal">
+        <p class="program-band-label">Program Spotlight</p>
+        <h2>Kids Programs</h2>
+        <p>Age-specific martial arts classes that develop discipline, confidence, and athleticism while keeping training fun and structured.</p>
+        <a href="kids-teens.html" class="btn btn-white">Learn More</a>
       </div>
     </div>
   </section>
@@ -361,7 +250,7 @@
     <div class="container">
       <h2 class="reveal">Ready to Start Your Transformation?</h2>
       <p class="reveal">Join hundreds of Goleta residents who have already discovered the power of martial arts. Your first week is completely FREE.</p>
-      <a href="free-trial.html" class="btn btn-white reveal">Get Your Free Week Now →</a>
+      <a href="book-free-class.html" class="btn btn-white reveal">Get Your Free Week Now →</a>
     </div>
   </section>
 

@@ -4,6 +4,170 @@
   'use strict';
 
   // ========================================
+  // MARKETING ATTRIBUTION + CONTEXT FOR GHL
+  // ========================================
+  const ATTR_STORAGE_KEY = 'ghl_attribution_context';
+  const SESSION_ID_KEY = 'ghl_session_id';
+  const ATTR_KEYS = [
+    'utm_source',
+    'utm_medium',
+    'utm_campaign',
+    'utm_term',
+    'utm_content',
+    'gclid',
+    'fbclid',
+    'msclkid',
+    'ttclid'
+  ];
+
+  const getNowIso = () => new Date().toISOString();
+
+  const getPageUrl = () => `${window.location.origin}${window.location.pathname}${window.location.search}`;
+
+  const getPageContext = () => ({
+    page_url: getPageUrl(),
+    page_path: window.location.pathname,
+    page_query: window.location.search || '',
+    page_title: document.title || '',
+    page_referrer: document.referrer || '',
+    browser_language: navigator.language || '',
+    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || '',
+    screen_resolution: `${window.screen.width}x${window.screen.height}`,
+    viewport_size: `${window.innerWidth}x${window.innerHeight}`,
+    user_agent: navigator.userAgent || ''
+  });
+
+  const getQueryAttribution = () => {
+    const params = new URLSearchParams(window.location.search);
+    const data = {};
+    ATTR_KEYS.forEach((key) => {
+      const value = params.get(key);
+      if (value) data[key] = value;
+    });
+    return data;
+  };
+
+  const getStoredAttributionContext = () => {
+    try {
+      const raw = localStorage.getItem(ATTR_STORAGE_KEY);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      return parsed && typeof parsed === 'object' ? parsed : null;
+    } catch (error) {
+      return null;
+    }
+  };
+
+  const saveAttributionContext = (data) => {
+    try {
+      localStorage.setItem(ATTR_STORAGE_KEY, JSON.stringify(data));
+    } catch (error) {
+      // Ignore storage errors (private mode / storage limits).
+    }
+  };
+
+  const getSessionId = () => {
+    const existing = sessionStorage.getItem(SESSION_ID_KEY);
+    if (existing) return existing;
+    const generated = `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+    sessionStorage.setItem(SESSION_ID_KEY, generated);
+    return generated;
+  };
+
+  const syncAttributionContext = () => {
+    const now = getNowIso();
+    const pageUrl = getPageUrl();
+    const queryData = getQueryAttribution();
+    const existing = getStoredAttributionContext();
+    const hasNewCampaignData = Object.keys(queryData).length > 0;
+
+    const firstTouch = existing?.first_touch || {
+      captured_at: now,
+      landing_page: pageUrl,
+      ...queryData
+    };
+
+    const lastTouch = hasNewCampaignData
+      ? {
+          captured_at: now,
+          landing_page: pageUrl,
+          ...queryData
+        }
+      : (existing?.last_touch || firstTouch);
+
+    const attributionContext = {
+      session_id: getSessionId(),
+      first_seen_at: existing?.first_seen_at || now,
+      last_seen_at: now,
+      first_touch: firstTouch,
+      last_touch: lastTouch,
+      first_landing_page: existing?.first_landing_page || pageUrl,
+      last_landing_page: pageUrl
+    };
+
+    saveAttributionContext(attributionContext);
+    return attributionContext;
+  };
+
+  const getFlatTrackingFields = () => {
+    const attrContext = getStoredAttributionContext() || syncAttributionContext();
+    const pageContext = getPageContext();
+    const firstTouch = attrContext.first_touch || {};
+    const lastTouch = attrContext.last_touch || {};
+
+    return {
+      ...pageContext,
+      session_id: attrContext.session_id || getSessionId(),
+      first_seen_at: attrContext.first_seen_at || '',
+      last_seen_at: attrContext.last_seen_at || '',
+      landing_page: attrContext.last_landing_page || pageContext.page_url,
+      first_landing_page: attrContext.first_landing_page || '',
+      last_landing_page: attrContext.last_landing_page || '',
+      first_touch_at: firstTouch.captured_at || '',
+      last_touch_at: lastTouch.captured_at || '',
+      first_touch_utm_source: firstTouch.utm_source || '',
+      first_touch_utm_medium: firstTouch.utm_medium || '',
+      first_touch_utm_campaign: firstTouch.utm_campaign || '',
+      first_touch_utm_term: firstTouch.utm_term || '',
+      first_touch_utm_content: firstTouch.utm_content || '',
+      first_touch_gclid: firstTouch.gclid || '',
+      first_touch_fbclid: firstTouch.fbclid || '',
+      first_touch_msclkid: firstTouch.msclkid || '',
+      first_touch_ttclid: firstTouch.ttclid || '',
+      last_touch_utm_source: lastTouch.utm_source || '',
+      last_touch_utm_medium: lastTouch.utm_medium || '',
+      last_touch_utm_campaign: lastTouch.utm_campaign || '',
+      last_touch_utm_term: lastTouch.utm_term || '',
+      last_touch_utm_content: lastTouch.utm_content || '',
+      last_touch_gclid: lastTouch.gclid || '',
+      last_touch_fbclid: lastTouch.fbclid || '',
+      last_touch_msclkid: lastTouch.msclkid || '',
+      last_touch_ttclid: lastTouch.ttclid || '',
+      utm_source: lastTouch.utm_source || '',
+      utm_medium: lastTouch.utm_medium || '',
+      utm_campaign: lastTouch.utm_campaign || '',
+      utm_term: lastTouch.utm_term || '',
+      utm_content: lastTouch.utm_content || '',
+      gclid: lastTouch.gclid || '',
+      fbclid: lastTouch.fbclid || '',
+      msclkid: lastTouch.msclkid || '',
+      ttclid: lastTouch.ttclid || ''
+    };
+  };
+
+  const setHiddenAttributionValues = () => {
+    const fields = getFlatTrackingFields();
+    Object.entries(fields).forEach(([name, value]) => {
+      document.querySelectorAll(`input[type="hidden"][name="${name}"]`).forEach((input) => {
+        input.value = value;
+      });
+    });
+  };
+
+  syncAttributionContext();
+  setHiddenAttributionValues();
+
+  // ========================================
   // MOBILE MENU TOGGLE
   // ========================================
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -112,6 +276,67 @@
         e.preventDefault();
         alert('Please fill in all required fields.');
       }
+    });
+  });
+
+  // ========================================
+  // GOHIGHLEVEL FORM WORKFLOW
+  // Keeps booking flow on-site while posting to GHL.
+  // ========================================
+  const ghlForms = document.querySelectorAll('form[data-ghl-form="true"]');
+
+  ghlForms.forEach(form => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Honeypot spam field (should stay empty).
+      const trapField = form.querySelector('input[name="website"]');
+      if (trapField && trapField.value.trim() !== '') {
+        return;
+      }
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const submitButton = form.querySelector('button[type="submit"], input[type="submit"]');
+      const originalLabel = submitButton ? submitButton.textContent : '';
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
+      }
+
+      const payload = new FormData(form);
+      syncAttributionContext();
+      const trackingFields = getFlatTrackingFields();
+
+      Object.entries(trackingFields).forEach(([key, value]) => {
+        if (payload.has(key)) {
+          payload.set(key, value);
+        } else {
+          payload.append(key, value);
+        }
+      });
+
+      payload.set('submitted_at', new Date().toISOString());
+
+      const successUrl = form.dataset.successUrl || 'thank-you.html';
+
+      try {
+        await fetch(form.action, {
+          method: 'POST',
+          body: payload,
+          mode: 'no-cors',
+          keepalive: true
+        });
+      } catch (error) {
+        // Intentionally swallow fetch errors and continue redirect.
+        // We prioritize uninterrupted booking UX.
+      }
+
+      window.location.href = successUrl;
     });
   });
 
