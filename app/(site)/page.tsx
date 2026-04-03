@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { SITE } from "@/lib/constants";
+
+const mapEmbedSrc =
+  "https://maps.google.com/maps?q=" + encodeURIComponent(SITE.address) + "&output=embed";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -144,6 +148,31 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16" aria-labelledby="find-us-heading">
+        <div className="mx-auto max-w-[1280px] px-8">
+          <div className="mb-10 text-center">
+            <h2 id="find-us-heading" className="font-heading text-3xl font-bold uppercase text-secondary md:text-4xl">
+              Find Us
+            </h2>
+            <p className="mt-3 text-gray-600">{SITE.address}</p>
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-lg">
+            <iframe
+              title="Map — 101 Jiu Jitsu & Kickboxing"
+              src={mapEmbedSrc}
+              className="h-[min(420px,50vh)] w-full min-h-[280px] border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+          <p className="mt-4 text-center">
+            <Link href="/contact" className="text-sm font-semibold text-primary hover:underline">
+              Contact & directions →
+            </Link>
+          </p>
         </div>
       </section>
 

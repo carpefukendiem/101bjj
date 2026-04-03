@@ -22,7 +22,6 @@ const nextConfig = {
       { source: "/trx-training.html", destination: "/programs/trx", permanent: true },
       { source: "/rocksteady.html", destination: "/programs/rocksteady", permanent: true },
       { source: "/instructors.html", destination: "/about", permanent: true },
-      { source: "/instructors", destination: "/about", permanent: true },
     ];
   },
 };

@@ -89,12 +89,6 @@ export function Header() {
             About
           </Link>
           <Link
-            href="/instructors"
-            className={`text-sm font-medium uppercase tracking-wider ${navClass(pathname.startsWith("/about"))}`}
-          >
-            Instructors
-          </Link>
-          <Link
             href="/schedule"
             className={`text-sm font-medium uppercase tracking-wider ${navClass(pathname.startsWith("/schedule"))}`}
           >
@@ -150,12 +144,6 @@ export function Header() {
             className={`mt-4 border-t border-white/10 py-4 text-lg font-semibold uppercase ${navClass(pathname.startsWith("/about"))}`}
           >
             About
-          </Link>
-          <Link
-            href="/instructors"
-            className={`border-b border-white/10 py-4 text-lg font-semibold uppercase ${navClass(pathname.startsWith("/about"))}`}
-          >
-            Instructors
           </Link>
           <Link
             href="/schedule"

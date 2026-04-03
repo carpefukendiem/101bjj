@@ -54,11 +54,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/instructors" className="hover:text-primary">
-                  Instructors
-                </Link>
-              </li>
-              <li>
                 <Link href="/schedule" className="hover:text-primary">
                   Class Schedule
                 </Link>
