@@ -29,8 +29,7 @@ export function PageHero({
       <div
         className="absolute inset-0"
         style={{
-          background:
-            "linear-gradient(135deg, rgba(10, 22, 40, 0.65), rgba(10, 22, 40, 0.55))",
+          background: "linear-gradient(135deg, rgba(10,22,40,0.65), rgba(10,22,40,0.55))",
         }}
         aria-hidden
       />

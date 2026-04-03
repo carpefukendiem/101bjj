@@ -21,7 +21,6 @@ export default async function SchedulePage() {
   const result = await fetchCalendarEventsForWeek(weekStart, weekEnd);
 
   const events = result.ok ? result.events : [];
-  const apiUnavailable = !result.ok;
   const initialDay = now.getDay();
 
   return (
@@ -29,17 +28,12 @@ export default async function SchedulePage() {
       <PageHero
         scheduleStyle
         backgroundImage="/images/training-photo.jpg"
-        title="Class"
-        titleAccent="Schedule"
+        title="CLASS"
+        titleAccent="SCHEDULE"
         subtitle="Find the perfect class time that fits your schedule. We offer classes 6 days a week."
       />
       <section className="mx-auto max-w-[1280px] px-8 py-16">
-        <ScheduleView
-          events={events}
-          weekStart={weekStart.toISOString()}
-          initialDay={initialDay}
-          apiUnavailable={apiUnavailable}
-        />
+        <ScheduleView events={events} weekStart={weekStart.toISOString()} initialDay={initialDay} />
       </section>
     </>
   );

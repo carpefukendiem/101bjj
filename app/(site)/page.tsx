@@ -12,47 +12,53 @@ export const metadata: Metadata = {
     "101 Jiu Jitsu & Kickboxing in Goleta — formerly Paragon Goleta. Brazilian Jiu-Jitsu, kickboxing, kids programs, and a family-friendly martial arts academy.",
 };
 
-const HOME_HERO_VIDEO = "/media/101-jiu-jitsu-homepage-video.mp4";
-
 export default function HomePage() {
   return (
     <>
       <section
-        className="relative flex min-h-[80vh] items-center justify-center bg-cover bg-center bg-no-repeat pt-[120px]"
+        className="relative flex min-h-[80vh] items-center pt-[120px]"
         style={{
-          backgroundImage:
-            "linear-gradient(135deg, rgba(10, 22, 40, 0.65), rgba(10, 22, 40, 0.55)), url(/images/gym-1.jpg)",
+          background:
+            "linear-gradient(135deg, rgba(10,22,40,0.65), rgba(10,22,40,0.55)), url('/images/gym-1.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
-        <div className="relative z-10 mx-auto w-full max-w-[1280px] px-8 py-24 text-center text-white">
-          <Image
-            src="/images/logo.webp"
-            alt="101 Jiu Jitsu & Kickboxing"
-            width={96}
-            height={96}
-            priority
-            className="mx-auto h-24 w-24"
-          />
-          <p className="hero-eyebrow mt-6 text-base italic text-white/90 md:text-lg">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-8 py-24 text-center text-white">
+          <div className="mb-6 flex justify-center">
+            <Image
+              src="/images/logo.webp"
+              alt="101 Jiu Jitsu & Kickboxing"
+              width={96}
+              height={96}
+              priority
+            />
+          </div>
+
+          <p className="hero-eyebrow mb-4 text-base italic opacity-90">
             A Mixed Martial Arts Academy For The Entire Family
           </p>
-          <h1 className="mt-4 font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight text-white">
-            101 Jiu Jitsu & <span className="text-primary">Kickboxing</span>
+
+          <h1 className="mb-6 font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold uppercase leading-tight text-white">
+            101 Jiu Jitsu &{" "}
+            <span className="text-primary">Kickboxing</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-xl text-white/85">
-            Formerly Paragon Goleta. Same team, same location, same commitment. Build confidence, discipline,
-            and real skills with a community that welcomes all ages and levels.
+
+          <p className="mx-auto mb-8 max-w-[600px] text-xl text-white/85">
+            Formerly Paragon Goleta. Same team, same location, same commitment. Build confidence, discipline, and real
+            skills with a community that welcomes all ages and levels.
           </p>
-          <div className="hero-cta-group mt-10 flex flex-wrap items-center justify-center gap-4">
+
+          <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/free-trial"
-              className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3 font-semibold text-white shadow-md transition hover:bg-primary-dark"
+              className="inline-flex items-center rounded-lg bg-primary px-8 py-3 font-semibold text-white transition hover:bg-primary-dark"
             >
               Try A Free Class
             </Link>
             <Link
               href="/schedule"
-              className="inline-flex items-center justify-center rounded-lg border-2 border-white bg-transparent px-8 py-3 font-semibold text-white transition hover:bg-white hover:text-secondary"
+              className="inline-flex items-center rounded-lg border-2 border-white bg-transparent px-8 py-3 font-semibold text-white transition hover:bg-white hover:text-secondary"
             >
               View Schedule
             </Link>
@@ -60,16 +66,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white py-16" aria-labelledby="gym-highlights-heading">
-        <div className="mx-auto max-w-[1280px] px-8">
-          <div className="mb-12 text-center">
-            <h2 id="gym-highlights-heading" className="font-heading text-4xl font-bold uppercase text-secondary">
-              Gym Highlights
-            </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-gray-600">
-              A real training clip from the current gym feed, hosted on this site — play, pause, and scrub with full
-              controls.
-            </p>
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-5xl px-4">
+          <div className="mb-8 text-center">
+            <h2 className="font-heading text-3xl font-bold uppercase text-secondary">Gym Highlights</h2>
+            <p className="mt-2 text-gray-600">A real training clip from our academy.</p>
           </div>
           <div className="overflow-hidden rounded-2xl border border-gray-200 bg-black shadow-xl">
             <video
@@ -79,14 +80,10 @@ export default function HomePage() {
               preload="metadata"
               poster="/images/gym-2.jpg"
             >
-              <source src={HOME_HERO_VIDEO} type="video/mp4" />
+              <source src="/media/101-jiu-jitsu-homepage-video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
-          <p className="mt-4 text-center text-sm text-gray-500">
-            Need a different clip? Replace the file in <code className="rounded bg-gray-100 px-1.5 py-0.5 text-xs">public/media/</code>{" "}
-            and this section updates on the next deploy.
-          </p>
         </div>
       </section>
 
