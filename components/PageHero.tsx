@@ -5,6 +5,8 @@ type PageHeroProps = {
   title: string;
   titleAccent?: string;
   subtitle?: string;
+  /** Matches legacy class-schedule.html hero (1280px container, larger title). */
+  scheduleStyle?: boolean;
 };
 
 export function PageHero({
@@ -12,9 +14,10 @@ export function PageHero({
   title,
   titleAccent,
   subtitle,
+  scheduleStyle,
 }: PageHeroProps) {
   return (
-    <section className="relative flex min-h-[50vh] items-center justify-center overflow-hidden pt-28 md:pt-32">
+    <section className="relative flex min-h-[50vh] items-center justify-center overflow-hidden pt-[120px]">
       <Image
         src={backgroundImage}
         alt=""
@@ -31,8 +34,12 @@ export function PageHero({
         }}
         aria-hidden
       />
-      <div className="relative z-10 mx-auto max-w-5xl px-4 py-16 text-center text-white">
-        <h1 className="font-heading text-4xl font-bold uppercase tracking-wide md:text-5xl">
+      <div
+        className={`relative z-10 mx-auto w-full text-center text-white ${scheduleStyle ? "max-w-[1280px] px-8 py-16" : "max-w-5xl px-4 py-16"}`}
+      >
+        <h1
+          className={`font-heading font-bold uppercase tracking-wide ${scheduleStyle ? "mb-4 text-[2.5rem] md:text-[3.5rem]" : "text-4xl md:text-5xl"}`}
+        >
           {title}
           {titleAccent ? (
             <>
@@ -42,7 +49,11 @@ export function PageHero({
           ) : null}
         </h1>
         {subtitle ? (
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">{subtitle}</p>
+          <p
+            className={`mx-auto max-w-2xl ${scheduleStyle ? "text-xl opacity-90" : "mt-4 text-lg text-white/90"}`}
+          >
+            {subtitle}
+          </p>
         ) : null}
       </div>
     </section>

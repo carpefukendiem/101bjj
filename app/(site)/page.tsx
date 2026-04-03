@@ -20,7 +20,7 @@ export default function HomePage() {
             "linear-gradient(135deg, rgba(10, 22, 40, 0.65), rgba(10, 22, 40, 0.55)), url(/images/gym-1.jpg)",
         }}
       >
-        <div className="relative z-10 mx-auto w-full max-w-[1280px] px-4 py-24 text-center text-white md:px-8">
+        <div className="relative z-10 mx-auto w-full max-w-[1280px] px-8 py-24 text-center text-white">
           <Image
             src="/images/logo.webp"
             alt="101 Jiu Jitsu & Kickboxing"
@@ -57,13 +57,14 @@ export default function HomePage() {
       </section>
 
       <section className="bg-white py-16" aria-labelledby="gym-highlights-heading">
-        <div className="mx-auto max-w-5xl px-4">
-          <div className="mb-8 text-center">
-            <h2 id="gym-highlights-heading" className="font-heading text-3xl font-bold uppercase text-secondary">
+        <div className="mx-auto max-w-[1280px] px-8">
+          <div className="mb-12 text-center">
+            <h2 id="gym-highlights-heading" className="font-heading text-4xl font-bold uppercase text-secondary">
               Gym Highlights
             </h2>
-            <p className="mt-2 text-gray-600">
-              A real training clip from our academy — play, pause, and scrub with full controls.
+            <p className="mx-auto mt-3 max-w-2xl text-gray-600">
+              A real training clip from the current gym feed, hosted on this site — play, pause, and scrub with full
+              controls.
             </p>
           </div>
           <div className="overflow-hidden rounded-2xl border border-gray-200 bg-black shadow-xl">
@@ -78,6 +79,10 @@ export default function HomePage() {
               Your browser does not support the video tag.
             </video>
           </div>
+          <p className="mt-4 text-center text-sm text-gray-500">
+            Need a different clip? Replace the file in <code className="rounded bg-gray-100 px-1.5 py-0.5 text-xs">public/media/</code>{" "}
+            and this section updates on the next deploy.
+          </p>
         </div>
       </section>
 

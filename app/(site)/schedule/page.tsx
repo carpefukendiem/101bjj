@@ -22,19 +22,22 @@ export default async function SchedulePage() {
 
   const events = result.ok ? result.events : [];
   const apiUnavailable = !result.ok;
+  const initialDay = now.getDay();
 
   return (
     <>
       <PageHero
+        scheduleStyle
         backgroundImage="/images/training-photo.jpg"
         title="Class"
         titleAccent="Schedule"
         subtitle="Find the perfect class time that fits your schedule. We offer classes 6 days a week."
       />
-      <section className="mx-auto max-w-4xl px-4 py-16">
+      <section className="mx-auto max-w-[1280px] px-8 py-16">
         <ScheduleView
           events={events}
           weekStart={weekStart.toISOString()}
+          initialDay={initialDay}
           apiUnavailable={apiUnavailable}
         />
       </section>
