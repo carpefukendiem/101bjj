@@ -21,7 +21,7 @@ function navClass(active: boolean) {
 }
 
 export function Header() {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {

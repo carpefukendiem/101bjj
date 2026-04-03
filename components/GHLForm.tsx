@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-import { GHL_FORM_WEBHOOK, PROGRAM_OPTIONS } from "@/lib/constants";
+import { PROGRAM_OPTIONS } from "@/lib/constants";
 import { getFlatTrackingFields, syncAttributionContext } from "@/lib/ghl-attribution";
 
 const REDIRECT_DEFAULT = "https://101jjkb.com/thank-you";
@@ -72,15 +72,19 @@ export function GHLForm({
     });
 
     try {
-      const res = await fetch(GHL_FORM_WEBHOOK, {
+      const res = await fetch("/api/ghl-form", {
         method: "POST",
         body: fd,
-        mode: "cors",
-        credentials: "omit",
       });
       if (!res.ok) {
-        const t = await res.text();
-        throw new Error(t || `Request failed (${res.status})`);
+        let msg = `Request failed (${res.status})`;
+        try {
+          const j = (await res.json()) as { error?: string };
+          if (j.error) msg = j.error;
+        } catch {
+          /* ignore */
+        }
+        throw new Error(msg);
       }
       window.location.href = "/thank-you";
     } catch (err) {

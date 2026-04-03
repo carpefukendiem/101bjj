@@ -17,6 +17,7 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://101jjkb.com"),
   title: {
     default: "101 Jiu Jitsu & Kickboxing | Goleta & Santa Barbara Martial Arts",
     template: "%s | 101 Jiu Jitsu & Kickboxing",

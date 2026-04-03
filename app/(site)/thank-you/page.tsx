@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function ThankYouPage() {
   return (
-    <section className="flex min-h-[70vh] items-center justify-center bg-gradient-to-br from-secondary to-[#1a2a42] px-4 py-24 text-center text-white">
+    <section className="flex min-h-[70vh] items-center justify-center bg-gradient-to-br from-secondary to-[#1a2a42] px-4 pb-24 pt-28 text-center text-white md:pt-32">
       <div className="max-w-xl">
         <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-primary text-4xl text-white md:h-[100px] md:w-[100px] md:text-5xl">
           ✓
