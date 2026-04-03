@@ -18,7 +18,7 @@ export default function FreeTrialPage() {
         subtitle="Tell us a bit about yourself — we'll reach out to schedule your first class."
       />
       <section className="mx-auto max-w-lg px-4 py-16">
-        <Suspense fallback={<p className="text-center text-gray-600">Loading form…</p>}>
+        <Suspense fallback={<div className="h-40 animate-pulse rounded-lg bg-gray-100" />}>
           <GHLForm
             sourceLabel="Website Free Trial"
             workflowVersion="class-booking-v3"

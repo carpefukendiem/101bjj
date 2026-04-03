@@ -106,7 +106,7 @@ export default function ContactPage() {
           </div>
           <div className="rounded-2xl bg-gray-100 p-8">
             <h3 className="font-heading text-xl font-bold uppercase text-secondary">Start Your Free Trial</h3>
-            <Suspense fallback={<p className="text-gray-600">Loading form…</p>}>
+            <Suspense fallback={<div className="h-40 animate-pulse rounded-lg bg-gray-100" />}>
               <GHLForm
                 sourceLabel="Website Contact Form"
                 workflowVersion="class-booking-v3"

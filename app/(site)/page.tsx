@@ -8,76 +8,50 @@ export const metadata: Metadata = {
     "101 Jiu Jitsu & Kickboxing in Goleta — formerly Paragon Goleta. Brazilian Jiu-Jitsu, kickboxing, kids programs, and a family-friendly martial arts academy.",
 };
 
-/** Same file for hero (autoplay background) and Gym Highlights (controls). */
 const HOME_HERO_VIDEO = "/media/101-jiu-jitsu-homepage-video.mp4";
 
 export default function HomePage() {
   return (
     <>
-      <section className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden pt-20 md:pt-24">
-        <video
-          className="absolute inset-0 z-0 h-full min-h-full w-full min-w-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/images/gym-1.jpg"
-        >
-          <source src={HOME_HERO_VIDEO} type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/50" aria-hidden />
-
-        <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center px-4 py-12 text-center md:max-w-4xl">
-          <p
-            className="mb-4 text-lg italic text-white md:text-xl"
-            style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
-          >
+      <section
+        className="relative flex min-h-[80vh] items-center justify-center bg-cover bg-center bg-no-repeat pt-[120px]"
+        style={{
+          backgroundImage:
+            "linear-gradient(135deg, rgba(10, 22, 40, 0.65), rgba(10, 22, 40, 0.55)), url(/images/gym-1.jpg)",
+        }}
+      >
+        <div className="relative z-10 mx-auto w-full max-w-[1280px] px-4 py-24 text-center text-white md:px-8">
+          <Image
+            src="/images/logo.webp"
+            alt="101 Jiu Jitsu & Kickboxing"
+            width={96}
+            height={96}
+            priority
+            className="mx-auto h-24 w-24"
+          />
+          <p className="hero-eyebrow mt-6 text-base italic text-white/90 md:text-lg">
             A Mixed Martial Arts Academy For The Entire Family
           </p>
-
-          <Image
-            src="/images/logo.png"
-            alt="101 Jiu Jitsu & Kickboxing"
-            width={200}
-            height={200}
-            priority
-            className="mx-auto h-[120px] w-auto md:h-[180px]"
-          />
-
-          <div className="mt-8 w-full rounded-2xl bg-white/95 px-4 py-8 text-left shadow-2xl md:px-10">
-            <p className="text-sm font-medium uppercase tracking-wide text-secondary/80">
-              Formerly Paragon Goleta, we are proud to introduce our new name:
-            </p>
-            <h1 className="mt-2 font-heading text-3xl font-bold uppercase tracking-wide text-secondary md:text-4xl">
-              101 Jiu Jitsu & Kickboxing
-            </h1>
-            <p className="mt-4 text-gray-700">
-              While our name has changed, everything else remains the same — the same location, the same
-              team, the same coaches, the same staff, the same gym, and the same commitment to hard work
-              and dedication.
-            </p>
-            <p className="mt-4 text-gray-700">
-              Our mission has always been to provide a safe, family-friendly environment where students of
-              all ages can grow in confidence, discipline, and skill. That hasn&apos;t changed.
-            </p>
-            <p className="mt-4 text-gray-700">
-              If you&apos;ve trained with us before, you&apos;re home. If you&apos;re new here, welcome —
-              we can&apos;t wait to meet you.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
-              <Link
-                href="/free-trial"
-                className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3 font-semibold text-white transition hover:bg-primary-dark"
-              >
-                Try A Free Class
-              </Link>
-              <Link
-                href="/schedule"
-                className="inline-flex items-center justify-center rounded-lg border-2 border-secondary bg-transparent px-8 py-3 font-semibold text-secondary transition hover:bg-secondary hover:text-white"
-              >
-                View Schedule
-              </Link>
-            </div>
+          <h1 className="mt-4 font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight text-white">
+            101 Jiu Jitsu & <span className="text-primary">Kickboxing</span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-xl text-white/85">
+            Formerly Paragon Goleta. Same team, same location, same commitment. Build confidence, discipline,
+            and real skills with a community that welcomes all ages and levels.
+          </p>
+          <div className="hero-cta-group mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/free-trial"
+              className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3 font-semibold text-white shadow-md transition hover:bg-primary-dark"
+            >
+              Try A Free Class
+            </Link>
+            <Link
+              href="/schedule"
+              className="inline-flex items-center justify-center rounded-lg border-2 border-white bg-transparent px-8 py-3 font-semibold text-white transition hover:bg-white hover:text-secondary"
+            >
+              View Schedule
+            </Link>
           </div>
         </div>
       </section>
@@ -134,22 +108,34 @@ export default function HomePage() {
         />
       </section>
 
-      <section className="bg-secondary py-16 text-white">
-        <div className="mx-auto max-w-7xl px-4 text-center">
-          <h2 className="font-heading text-3xl font-bold uppercase">Why Train at 101?</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-white/80">
-            We&apos;re not just another gym. We&apos;re a community dedicated to helping you become your best
-            self.
+      <section className="w-full bg-secondary py-16 text-white">
+        <div className="mx-auto w-full max-w-none px-4 md:px-8">
+          <h2 className="text-center font-heading text-3xl font-bold uppercase">Why Train at 101?</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-white/80">
+            We&apos;re not just another gym. We&apos;re a community dedicated to helping you become your best self.
           </p>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { t: "Expert Coaching", d: "Learn from experienced instructors in a structured, safe environment." },
-              { t: "All Ages & Levels", d: "Programs for kids, teens, and adults — from first day to competition." },
-              { t: "Prime Goleta Location", d: "5940 Calle Real with parking and easy access from Santa Barbara & IV." },
+              {
+                t: "Expert Coaching",
+                d: "Learn from experienced instructors in a structured, safe environment.",
+              },
+              {
+                t: "All Ages & Levels",
+                d: "Programs for kids, teens, and adults — from first day to competition.",
+              },
+              {
+                t: "Prime Goleta Location",
+                d: "5940 Calle Real with parking and easy access from Santa Barbara & IV.",
+              },
+              {
+                t: "Community & Culture",
+                d: "Train with a welcoming team that pushes you to be your best every class.",
+              },
             ].map((x) => (
-              <div key={x.t} className="rounded-xl border border-white/10 bg-white/5 p-6">
+              <div key={x.t} className="border-l-4 border-primary px-6 py-8">
                 <h3 className="font-heading text-lg font-bold uppercase text-primary">{x.t}</h3>
-                <p className="mt-2 text-sm text-white/75">{x.d}</p>
+                <p className="mt-3 text-sm leading-relaxed text-white/80">{x.d}</p>
               </div>
             ))}
           </div>

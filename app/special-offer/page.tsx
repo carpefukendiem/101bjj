@@ -89,7 +89,7 @@ export default function SpecialOfferPage() {
 
       <section id="form" className="mx-auto max-w-lg scroll-mt-24 px-4 py-16">
         <h2 className="text-center font-heading text-2xl font-bold uppercase text-secondary">Claim Your Spot</h2>
-        <Suspense fallback={<p className="text-center text-gray-600">Loading form…</p>}>
+        <Suspense fallback={<div className="h-40 animate-pulse rounded-lg bg-gray-100" />}>
           <GHLForm
             sourceLabel="Website Special Offer"
             workflowVersion="special-offer-v1"
