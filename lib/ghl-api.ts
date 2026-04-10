@@ -8,6 +8,8 @@ export type CalendarEventRecord = {
   calendarId?: string;
   appointmentStatus?: string;
   notes?: string;
+  /** 0=Sun … 6=Sat — optional; GHL events omit and use startTime for day bucketing */
+  day?: number;
   [key: string]: unknown;
 };
 

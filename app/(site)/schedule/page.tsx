@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { ScheduleView } from "@/components/ScheduleView";
-import {
-  addDays,
-  fetchCalendarEventsForWeek,
-  startOfWeekMonday,
-  type CalendarEventRecord,
-} from "@/lib/ghl-api";
-import { getFallbackSchedule } from "@/lib/schedule-fallback";
+import { addDays, fetchCalendarEventsForWeek, startOfWeekMonday, type CalendarEventRecord } from "@/lib/ghl-api";
+import { FALLBACK_SCHEDULE } from "@/lib/schedule-fallback";
 
 export const metadata: Metadata = {
   title: "Class Schedule",
@@ -35,8 +30,6 @@ export default async function SchedulePage() {
     useFallback = true;
   }
 
-  const displayEvents = useFallback || !events?.length ? getFallbackSchedule() : events;
-
   return (
     <>
       <PageHero
@@ -47,7 +40,7 @@ export default async function SchedulePage() {
         subtitle="Find the perfect class time that fits your schedule. We offer classes 6 days a week."
       />
       <section className="mx-auto max-w-5xl px-4 py-16">
-        <ScheduleView events={displayEvents} weekStart={weekStart.toISOString()} />
+        <ScheduleView events={useFallback ? FALLBACK_SCHEDULE : (events ?? FALLBACK_SCHEDULE)} />
       </section>
     </>
   );

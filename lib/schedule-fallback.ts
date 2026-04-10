@@ -1,70 +1,65 @@
 import type { CalendarEventRecord } from "@/lib/ghl-api";
-import { startOfWeekMonday } from "@/lib/ghl-api";
 
-/**
- * Build ISO timestamps for the current week, aligned to the same Monday as
- * `startOfWeekMonday` (matches "Week of …" on the schedule page).
- * dayIndex: 0=Sun … 6=Sat
- */
-function thisWeekDate(dayIndex: number, hour: number, minute: number): string {
-  const monday = startOfWeekMonday(new Date());
-  const offsetFromMonday = dayIndex === 0 ? 6 : dayIndex - 1;
-  const d = new Date(monday);
-  d.setDate(monday.getDate() + offsetFromMonday);
-  d.setHours(hour, minute, 0, 0);
-  return d.toISOString();
-}
+// Accurate weekly schedule from 101jiujitsugoleta.com/schedule
+// Displayed as a repeating weekly schedule — no dates shown
 
-/** Real class times from the original class-schedule.html — rebuilt each request. */
-export function getFallbackSchedule(): CalendarEventRecord[] {
-  return [
-    { id: "m1", title: "Jiu Jitsu", startTime: thisWeekDate(1, 6, 30), notes: "Morning Gi training – fundamental techniques" },
-    { id: "m2", title: "No-Gi Jiu Jitsu", startTime: thisWeekDate(1, 12, 0), notes: "Fast-paced grappling without the gi" },
-    { id: "m3", title: "Kids Boxing", startTime: thisWeekDate(1, 16, 0), notes: "Fun fitness and coordination for kids" },
-    { id: "m4", title: "Kids No-Gi Grappling", startTime: thisWeekDate(1, 17, 0), notes: "Wrestling and submission grappling for kids" },
-    { id: "m5", title: "Kickboxing", startTime: thisWeekDate(1, 18, 0), notes: "High-energy striking class" },
-    { id: "m6", title: "No-Gi Jiu Jitsu", startTime: thisWeekDate(1, 19, 0), notes: "Advanced techniques and rolling" },
+export const FALLBACK_SCHEDULE: CalendarEventRecord[] = [
+  // ── MONDAY ──────────────────────────────────────────
+  { id: "mon-1", title: "Jiu Jitsu", startTime: "2024-01-01T06:30:00", day: 1, notes: "Morning Gi training" },
+  { id: "mon-2", title: "No-Gi Jiu Jitsu", startTime: "2024-01-01T12:00:00", day: 1, notes: "Fast-paced grappling without the gi" },
+  { id: "mon-3", title: "Kids Boxing", startTime: "2024-01-01T16:00:00", day: 1, notes: "Fun fitness and coordination for kids" },
+  { id: "mon-4", title: "Kids No-Gi Grappling", startTime: "2024-01-01T17:00:00", day: 1, notes: "Wrestling and submission grappling for kids" },
+  { id: "mon-5", title: "Kickboxing", startTime: "2024-01-01T18:00:00", day: 1, notes: "High-energy striking class" },
+  { id: "mon-6", title: "No-Gi Jiu Jitsu", startTime: "2024-01-01T19:00:00", day: 1, notes: "Advanced techniques and rolling" },
 
-    { id: "t1", title: "Kickboxing", startTime: thisWeekDate(2, 6, 0), notes: "Early morning cardio and striking" },
-    { id: "t2", title: "Jiu Jitsu", startTime: thisWeekDate(2, 6, 30), notes: "Morning Gi training – fundamental techniques" },
-    { id: "t3", title: "Golden Years Boxing", startTime: thisWeekDate(2, 10, 0), notes: "Low-impact boxing for 50+" },
-    { id: "t4", title: "Rock Steady Boxing", startTime: thisWeekDate(2, 10, 0), notes: "Boxing-based fitness program" },
-    { id: "t5", title: "Kickboxing", startTime: thisWeekDate(2, 12, 0), notes: "Lunchtime cardio session" },
-    { id: "t6", title: "Kids Boxing", startTime: thisWeekDate(2, 16, 0), notes: "Fun fitness and coordination for kids" },
-    { id: "t7", title: "Teens Jiu Jitsu", startTime: thisWeekDate(2, 16, 0), notes: "Technical training for teenagers" },
-    { id: "t8", title: "Kids Jiu Jitsu (Ages 4-7)", startTime: thisWeekDate(2, 16, 0), notes: "Fun fundamentals for youngest students" },
-    { id: "t9", title: "Kids Jiu Jitsu (Ages 8-12)", startTime: thisWeekDate(2, 17, 0), notes: "Building skills and confidence" },
-    { id: "t10", title: "TRX Training", startTime: thisWeekDate(2, 17, 0), notes: "Suspension training for strength and core" },
-    { id: "t11", title: "Kickboxing", startTime: thisWeekDate(2, 18, 0), notes: "Evening striking class" },
-    { id: "t12", title: "Jiu Jitsu Fundamentals", startTime: thisWeekDate(2, 19, 0), notes: "Perfect for beginners – core positions and techniques" },
+  // ── TUESDAY ─────────────────────────────────────────
+  { id: "tue-1", title: "Kickboxing", startTime: "2024-01-02T06:00:00", day: 2, notes: "Early morning cardio and striking" },
+  { id: "tue-2", title: "Jiu Jitsu", startTime: "2024-01-02T06:30:00", day: 2, notes: "Morning Gi training" },
+  { id: "tue-3", title: "Rock Steady Boxing", startTime: "2024-01-02T10:00:00", day: 2, notes: "Boxing-based fitness program" },
+  { id: "tue-4", title: "Kickboxing", startTime: "2024-01-02T12:00:00", day: 2, notes: "Lunchtime cardio session" },
+  { id: "tue-5", title: "Teens Jiu Jitsu", startTime: "2024-01-02T16:00:00", day: 2, notes: "Technical training for teenagers" },
+  { id: "tue-6", title: "Kids Jiu Jitsu (Ages 4-7)", startTime: "2024-01-02T16:00:00", day: 2, notes: "Fun fundamentals for youngest students" },
+  { id: "tue-7", title: "Kids Jiu Jitsu (Ages 8-12)", startTime: "2024-01-02T16:45:00", day: 2, notes: "Building skills and confidence" },
+  { id: "tue-8", title: "TRX", startTime: "2024-01-02T17:00:00", day: 2, notes: "Suspension training for strength and core" },
+  { id: "tue-9", title: "Kickboxing", startTime: "2024-01-02T18:00:00", day: 2, notes: "Evening striking class" },
+  { id: "tue-10", title: "Jiu Jitsu Fundamentals", startTime: "2024-01-02T19:00:00", day: 2, notes: "Perfect for beginners — core positions and techniques" },
+  { id: "tue-11", title: "Advanced Jiu Jitsu", startTime: "2024-01-02T19:00:00", day: 2, notes: "Competition prep and advanced techniques" },
 
-    { id: "w1", title: "Kickboxing", startTime: thisWeekDate(3, 6, 0), notes: "Early morning cardio and striking" },
-    { id: "w2", title: "Jiu Jitsu", startTime: thisWeekDate(3, 6, 30), notes: "Morning Gi training" },
-    { id: "w3", title: "Rock Steady Boxing", startTime: thisWeekDate(3, 10, 0), notes: "Boxing-based fitness program" },
-    { id: "w4", title: "No-Gi Jiu Jitsu", startTime: thisWeekDate(3, 12, 0), notes: "Lunchtime grappling session" },
-    { id: "w5", title: "Kids Boxing", startTime: thisWeekDate(3, 16, 0), notes: "Fun fitness and coordination for kids" },
-    { id: "w6", title: "Kids No-Gi Grappling", startTime: thisWeekDate(3, 17, 0), notes: "Wrestling and submission grappling for kids" },
-    { id: "w7", title: "Kickboxing", startTime: thisWeekDate(3, 18, 0), notes: "Evening striking class" },
-    { id: "w8", title: "No-Gi Jiu Jitsu", startTime: thisWeekDate(3, 19, 0), notes: "Advanced techniques and rolling" },
+  // ── WEDNESDAY ───────────────────────────────────────
+  { id: "wed-1", title: "Kickboxing", startTime: "2024-01-03T06:00:00", day: 3, notes: "Early morning cardio and striking" },
+  { id: "wed-2", title: "Jiu Jitsu", startTime: "2024-01-03T06:30:00", day: 3, notes: "Morning Gi training" },
+  { id: "wed-3", title: "Rock Steady Boxing", startTime: "2024-01-03T10:00:00", day: 3, notes: "Boxing-based fitness program" },
+  { id: "wed-4", title: "No-Gi Jiu Jitsu", startTime: "2024-01-03T12:00:00", day: 3, notes: "Lunchtime grappling session" },
+  { id: "wed-5", title: "Kids Boxing", startTime: "2024-01-03T16:00:00", day: 3, notes: "Fun fitness and coordination for kids" },
+  { id: "wed-6", title: "Kids No-Gi Grappling", startTime: "2024-01-03T17:00:00", day: 3, notes: "Wrestling and submission grappling for kids" },
+  { id: "wed-7", title: "Kickboxing", startTime: "2024-01-03T18:00:00", day: 3, notes: "Evening striking class" },
+  { id: "wed-8", title: "Mixed Martial Arts", startTime: "2024-01-03T18:00:00", day: 3, notes: "Full MMA — striking, wrestling, and submissions" },
+  { id: "wed-9", title: "No-Gi Jiu Jitsu", startTime: "2024-01-03T19:00:00", day: 3, notes: "Advanced techniques and rolling" },
 
-    { id: "th1", title: "Kickboxing", startTime: thisWeekDate(4, 6, 0), notes: "Early morning cardio" },
-    { id: "th2", title: "Jiu Jitsu", startTime: thisWeekDate(4, 6, 30), notes: "Morning Gi fundamentals" },
-    { id: "th3", title: "Rock Steady Boxing", startTime: thisWeekDate(4, 10, 0), notes: "Boxing-based fitness" },
-    { id: "th4", title: "Kickboxing", startTime: thisWeekDate(4, 12, 0), notes: "Lunchtime cardio" },
-    { id: "th5", title: "Teens Jiu Jitsu", startTime: thisWeekDate(4, 16, 0), notes: "Technical training for teenagers" },
-    { id: "th6", title: "Kids Jiu Jitsu (Ages 4-7)", startTime: thisWeekDate(4, 16, 0), notes: "Fun fundamentals for youngest students" },
-    { id: "th7", title: "Kids Jiu Jitsu (Ages 8-12)", startTime: thisWeekDate(4, 17, 0), notes: "Building skills and confidence" },
-    { id: "th8", title: "Kickboxing", startTime: thisWeekDate(4, 18, 0), notes: "Evening striking" },
-    { id: "th9", title: "Jiu Jitsu", startTime: thisWeekDate(4, 19, 0), notes: "Evening Gi training" },
+  // ── THURSDAY ────────────────────────────────────────
+  { id: "thu-1", title: "Kickboxing", startTime: "2024-01-04T06:00:00", day: 4, notes: "Early morning cardio and striking" },
+  { id: "thu-2", title: "Jiu Jitsu", startTime: "2024-01-04T06:30:00", day: 4, notes: "Morning Gi training" },
+  { id: "thu-3", title: "Rock Steady Boxing", startTime: "2024-01-04T10:00:00", day: 4, notes: "Boxing-based fitness program" },
+  { id: "thu-4", title: "Kickboxing", startTime: "2024-01-04T12:00:00", day: 4, notes: "Lunchtime cardio session" },
+  { id: "thu-5", title: "Teens Jiu Jitsu", startTime: "2024-01-04T16:00:00", day: 4, notes: "Technical training for teenagers" },
+  { id: "thu-6", title: "Kids Jiu Jitsu (Ages 4-7)", startTime: "2024-01-04T16:00:00", day: 4, notes: "Fun fundamentals for youngest students" },
+  { id: "thu-7", title: "Kids Jiu Jitsu (Ages 8-12)", startTime: "2024-01-04T16:45:00", day: 4, notes: "Building skills and confidence" },
+  { id: "thu-8", title: "TRX", startTime: "2024-01-04T17:00:00", day: 4, notes: "Suspension training for strength and core" },
+  { id: "thu-9", title: "Kickboxing", startTime: "2024-01-04T18:00:00", day: 4, notes: "Evening striking class" },
+  { id: "thu-10", title: "Jiu Jitsu Fundamentals", startTime: "2024-01-04T19:00:00", day: 4, notes: "Perfect for beginners" },
+  { id: "thu-11", title: "Advanced Jiu Jitsu", startTime: "2024-01-04T19:00:00", day: 4, notes: "Competition prep and advanced techniques" },
 
-    { id: "f1", title: "Kickboxing", startTime: thisWeekDate(5, 6, 0), notes: "Early morning cardio and striking" },
-    { id: "f2", title: "Jiu Jitsu", startTime: thisWeekDate(5, 6, 30), notes: "Morning Gi training" },
-    { id: "f3", title: "No-Gi Jiu Jitsu", startTime: thisWeekDate(5, 12, 0), notes: "Lunchtime grappling" },
-    { id: "f4", title: "Sparring", startTime: thisWeekDate(5, 17, 30), notes: "Open sparring – all disciplines welcome" },
-    { id: "f5", title: "Kickboxing", startTime: thisWeekDate(5, 18, 0), notes: "Evening striking class" },
+  // ── FRIDAY ──────────────────────────────────────────
+  { id: "fri-1", title: "Sparring", startTime: "2024-01-05T06:00:00", day: 5, notes: "Open sparring — all disciplines welcome" },
+  { id: "fri-2", title: "No-Gi Jiu Jitsu", startTime: "2024-01-05T12:00:00", day: 5, notes: "Lunchtime grappling" },
+  { id: "fri-3", title: "Sparring", startTime: "2024-01-05T17:30:00", day: 5, notes: "Evening open sparring" },
 
-    { id: "sa1", title: "Kids No-Gi Grappling", startTime: thisWeekDate(6, 9, 0), notes: "Weekend kids grappling class" },
-    { id: "sa2", title: "TRX Training", startTime: thisWeekDate(6, 9, 0), notes: "Suspension training – strength and core" },
-    { id: "sa3", title: "Kickboxing", startTime: thisWeekDate(6, 10, 0), notes: "Weekend striking session" },
-  ];
-}
+  // ── SATURDAY ────────────────────────────────────────
+  { id: "sat-1", title: "Kids No-Gi Grappling", startTime: "2024-01-06T09:00:00", day: 6, notes: "Weekend kids grappling class" },
+  { id: "sat-2", title: "TRX", startTime: "2024-01-06T09:00:00", day: 6, notes: "Suspension training for strength and core" },
+  { id: "sat-3", title: "Kickboxing", startTime: "2024-01-06T10:00:00", day: 6, notes: "Weekend striking session" },
+  { id: "sat-4", title: "No-Gi: Open To All Gyms", startTime: "2024-01-06T12:00:00", day: 6, notes: "Open mat — all gyms welcome" },
+
+  // ── SUNDAY ──────────────────────────────────────────
+  // No classes on Sunday — rest day
+];
