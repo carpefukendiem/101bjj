@@ -5,11 +5,14 @@ import {
   addDays,
   fetchCalendarEventsForWeek,
   startOfWeekMonday,
+  type CalendarEventRecord,
 } from "@/lib/ghl-api";
+import { getFallbackSchedule } from "@/lib/schedule-fallback";
 
 export const metadata: Metadata = {
   title: "Class Schedule",
-  description: "Weekly class schedule at 101 Jiu Jitsu & Kickboxing in Goleta, CA.",
+  description:
+    "Weekly class schedule at 101 Jiu Jitsu & Kickboxing in Goleta, CA. Jiu-Jitsu, Kickboxing, Boxing, Kids classes and more.",
 };
 
 export const dynamic = "force-dynamic";
@@ -17,11 +20,22 @@ export const dynamic = "force-dynamic";
 export default async function SchedulePage() {
   const now = new Date();
   const weekStart = startOfWeekMonday(now);
-  const weekEnd = addDays(weekStart, 7);
-  const result = await fetchCalendarEventsForWeek(weekStart, weekEnd);
+  let events: CalendarEventRecord[] | null = null;
+  let useFallback = false;
 
-  const events = result.ok ? result.events : [];
-  const initialDay = now.getDay();
+  try {
+    const weekEnd = addDays(weekStart, 7);
+    const result = await fetchCalendarEventsForWeek(weekStart, weekEnd);
+    if (result.ok && result.events.length > 0) {
+      events = result.events;
+    } else {
+      useFallback = true;
+    }
+  } catch {
+    useFallback = true;
+  }
+
+  const displayEvents = useFallback || !events?.length ? getFallbackSchedule() : events;
 
   return (
     <>
@@ -32,8 +46,8 @@ export default async function SchedulePage() {
         titleAccent="SCHEDULE"
         subtitle="Find the perfect class time that fits your schedule. We offer classes 6 days a week."
       />
-      <section className="mx-auto max-w-[1280px] px-8 py-16">
-        <ScheduleView events={events} weekStart={weekStart.toISOString()} initialDay={initialDay} />
+      <section className="mx-auto max-w-5xl px-4 py-16">
+        <ScheduleView events={displayEvents} weekStart={weekStart.toISOString()} />
       </section>
     </>
   );
