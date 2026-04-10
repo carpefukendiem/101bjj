@@ -97,6 +97,16 @@ export function Header() {
             Contact
           </Link>
           <Link
+            href="/special-offer"
+            className={`rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wide transition-colors ${
+              pathname.startsWith("/special-offer")
+                ? "bg-amber-500 text-secondary"
+                : "bg-amber-500/90 text-secondary hover:bg-amber-400"
+            }`}
+          >
+            🎁 Special Offer
+          </Link>
+          <Link
             href="/free-trial"
             className="rounded-[6px] bg-primary px-6 py-3 text-sm font-semibold uppercase text-white transition-colors hover:bg-primary-dark"
           >
@@ -154,6 +164,12 @@ export function Header() {
             className={`border-b border-white/10 py-4 text-lg font-semibold uppercase ${pathname.startsWith("/contact") ? "text-primary" : "text-white"}`}
           >
             Contact
+          </Link>
+          <Link
+            href="/special-offer"
+            className="mt-2 block rounded-lg bg-amber-500 py-4 text-center text-lg font-bold uppercase text-secondary"
+          >
+            🎁 Special Offer
           </Link>
           <Link
             href="/free-trial"

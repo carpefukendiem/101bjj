@@ -1,122 +1,170 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import Link from "next/link";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { GHLForm } from "@/components/GHLForm";
 
 export const metadata: Metadata = {
-  title: "Special Offer — 2 Months For The Price Of 1",
-  description: "Limited-time new member offer at 101 Jiu Jitsu & Kickboxing in Goleta.",
+  title: "Special Offer — 2 Months For The Price of 1",
+  description:
+    "Limited time offer for new members at 101 Jiu Jitsu & Kickboxing in Goleta. Get 2 months of unlimited martial arts training for the price of 1. No contracts, no credit card required.",
 };
+
+const includedItems = [
+  "Unlimited classes — every day we're open",
+  "Access to every program (BJJ, Kickboxing, Boxing, Wrestling & more)",
+  "Free uniform — gi or training gear ($75 value)",
+  "No credit card required to start",
+  "Family-friendly environment — all ages welcome",
+  "All skill levels — complete beginners welcome",
+];
 
 export default function SpecialOfferPage() {
   return (
     <>
-      <section className="bg-primary px-4 py-3 text-center text-sm font-semibold text-white md:text-base">
-        🔥 Limited Time — This Offer Ends Soon
-      </section>
+      <Header />
+      <main>
+        {/* SECTION 1 — HERO */}
+        <section className="bg-[#0a1628]">
+          <div className="w-full bg-primary py-[0.6rem] text-center text-[0.9rem] text-white">
+            🔥 Limited Time — This Offer Ends Soon
+          </div>
+          <div className="px-4 pb-20 pt-32 text-center text-white">
+            <h1 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] font-bold uppercase leading-tight">
+              Get 2 Months For The Price Of 1
+            </h1>
+            <p className="mt-3 text-lg text-white/80">New Members Only · No Contracts · Cancel Anytime</p>
+            <a
+              href="#offer-form"
+              className="mt-8 inline-block rounded-lg bg-primary px-10 py-4 text-lg font-bold uppercase text-white shadow-xl transition hover:bg-primary-dark"
+            >
+              Claim My Offer →
+            </a>
+            <p className="mt-4 text-sm text-white/60">
+              🔒 No credit card required · Cancel anytime · New members only
+            </p>
+          </div>
+        </section>
 
-      <section className="bg-secondary px-4 py-16 text-center text-white">
-        <h1 className="font-heading text-3xl font-bold uppercase leading-tight md:text-5xl">
-          Get 2 Months For The Price Of 1
-        </h1>
-        <p className="mt-4 text-lg text-white/85">New Members Only · No Contracts · Cancel Anytime</p>
-        <a
-          href="#form"
-          className="mt-10 inline-flex rounded-lg bg-primary px-10 py-4 text-lg font-bold text-white shadow-lg hover:bg-primary-dark"
-        >
-          Claim My Offer →
-        </a>
-      </section>
+        {/* SECTION 2 — WHAT'S INCLUDED */}
+        <section className="bg-white py-16">
+          <div className="mx-auto max-w-4xl px-4">
+            <h2 className="mb-8 text-center font-heading text-3xl font-bold uppercase text-secondary">
+              What&apos;s Included
+            </h2>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {includedItems.map((line) => (
+                <div key={line} className="flex items-start">
+                  <span className="mr-3 text-xl text-green-600">✓</span>
+                  <span className="font-medium text-gray-800">{line}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-10 rounded-2xl bg-gradient-to-br from-primary to-primary-dark p-8 text-center text-white">
+              <p className="text-xl text-white/70 line-through">Normally $149/mo</p>
+              <p className="mt-2 font-heading text-3xl font-bold uppercase text-white">
+                You pay for 1 month — get 2 FREE
+              </p>
+              <p className="mt-2 text-base text-white/85">
+                That&apos;s $149 for 2 full months of unlimited training
+              </p>
+            </div>
+          </div>
+        </section>
 
-      <section className="mx-auto max-w-3xl px-4 py-16">
-        <h2 className="text-center font-heading text-2xl font-bold uppercase text-secondary">What&apos;s Included</h2>
-        <ul className="mx-auto mt-8 max-w-xl space-y-3 text-gray-800">
-          {[
-            "Unlimited classes",
-            "Every program",
-            "Free uniform (gi or gear, $75 value)",
-            "No credit card required to start",
-            "Family-friendly environment",
-            "All skill levels welcome",
-          ].map((line) => (
-            <li key={line} className="flex gap-3">
-              <span className="font-bold text-primary">✓</span>
-              {line}
-            </li>
-          ))}
-        </ul>
-        <p className="mt-10 rounded-xl border-2 border-primary bg-red-50 px-6 py-4 text-center font-heading text-lg font-bold uppercase text-secondary">
-          Normally $149/mo — You pay for 1, get 2 FREE
-        </p>
-      </section>
-
-      <section className="bg-gray-100 px-4 py-16">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="text-center font-heading text-2xl font-bold uppercase text-secondary">
+        {/* SECTION 3 — SOCIAL PROOF */}
+        <section className="bg-[#f8f9fa] px-4 py-16">
+          <h2 className="text-center font-heading text-3xl font-bold uppercase text-secondary">
             Real Results From Real Members
           </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <p className="mx-auto mb-10 mt-2 max-w-2xl text-center text-gray-600">
+            Hear directly from people who train at 101 Jiu Jitsu & Kickboxing
+          </p>
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
             {[1, 2].map((i) => (
-              <div
-                key={i}
-                className="flex min-h-[220px] flex-col items-center justify-center rounded-2xl bg-secondary p-8 text-center text-white"
-              >
-                <span className="text-5xl opacity-80">▶</span>
-                <p className="mt-4 font-semibold">Member Story — Video Coming Soon</p>
-                {/* TODO: Replace with actual video URLs provided by client */}
+              <div key={i}>
+                {/* TODO: Replace with actual video URL from client */}
+                <div className="relative flex aspect-video cursor-pointer items-center justify-center overflow-hidden rounded-2xl bg-[#1a1a2e]">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 text-3xl text-white">
+                    ▶
+                  </div>
+                </div>
+                <p className="mt-3 text-center text-sm font-medium text-gray-600">Member Story — Video Coming Soon</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="bg-[#0d1f35] px-4 py-16 text-white">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xl font-semibold">🥗 BONUS: Fuel Your Training With A Custom Meal Plan</p>
-          <p className="mt-4 text-white/80">
-            Members who combine training with structured nutrition see results 3x faster.
-          </p>
-          <p className="mt-6 text-lg">Get 20% off your first month with [Partner Name]</p>
-          <button
-            type="button"
-            className="mt-8 rounded-lg border-2 border-white px-8 py-3 font-semibold text-white transition hover:bg-white hover:text-secondary"
-          >
-            Add Nutrition To My Plan →
-          </button>
-          {/* TODO: Add meal plan partner name, logo, and promo/affiliate link */}
-        </div>
-      </section>
+        {/* SECTION 4 — MEAL PLAN */}
+        <section className="bg-[#0a1628] px-4 py-16 text-white">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="font-heading text-2xl font-bold uppercase text-white">
+              🥗 BONUS: Fuel Your Training With A Custom Meal Plan
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-base text-white/80">
+              Members who combine training with structured nutrition see results 3x faster. We&apos;ve partnered with a
+              local nutrition program to help you dial in your diet from day one.
+            </p>
+            <div className="mt-6 inline-block w-full max-w-lg rounded-xl bg-white/10 p-6">
+              <p className="text-lg font-bold text-white">Get 20% off your first month with [Partner Name]</p>
+              <p className="mt-1 text-sm text-white/70">Exclusive discount for 101 Jiu Jitsu members only</p>
+            </div>
+            {/* TODO: Replace href="#" with actual meal plan partner affiliate/promo link */}
+            <a
+              href="#"
+              className="mt-6 inline-block rounded-lg border-2 border-white px-8 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-secondary"
+            >
+              Add Nutrition To My Plan →
+            </a>
+          </div>
+        </section>
 
-      <section id="form" className="mx-auto max-w-lg scroll-mt-24 px-4 py-16">
-        <h2 className="text-center font-heading text-2xl font-bold uppercase text-secondary">Claim Your Spot</h2>
-        <Suspense fallback={<div className="h-40 animate-pulse rounded-lg bg-gray-100" />}>
-          <GHLForm
-            sourceLabel="Website Special Offer"
-            workflowVersion="special-offer-v1"
-            submitLabel="Yes! I Want This Offer →"
-            className="mt-8"
-          />
-        </Suspense>
-        <p className="mt-6 text-center text-sm text-gray-500">
-          No contracts · Family-friendly · Est. Goleta, CA
-        </p>
-      </section>
-
-      <section className="border-t border-gray-200 bg-white px-4 py-16 text-center">
-        <p className="text-lg font-medium text-secondary">Ready to start?</p>
-        <a
-          href="#form"
-          className="mt-6 inline-flex rounded-lg bg-primary px-10 py-4 text-lg font-bold text-white hover:bg-primary-dark"
+        {/* SECTION 5 — OFFER FORM */}
+        <section
+          id="offer-form"
+          className="bg-gradient-to-br from-[#0a1628] to-[#1a2a42] px-4 py-20 text-white"
         >
-          Yes! I Want 2 Months For The Price of 1 →
-        </a>
-      </section>
+          <div className="mx-auto max-w-lg">
+            <h2 className="text-center font-heading text-4xl font-bold uppercase text-white">Claim Your Spot</h2>
+            <p className="mt-3 text-center text-white/80">
+              Fill out the form below and we&apos;ll reach out within 24 hours to get you started.
+            </p>
+            <div className="mt-10 rounded-2xl bg-white p-8 shadow-2xl">
+              <div className="text-gray-900">
+                <Suspense fallback={<div className="h-64 animate-pulse rounded-lg bg-gray-100" />}>
+                  <GHLForm
+                    sourceLabel="Website Special Offer"
+                    workflowVersion="special-offer-v1"
+                    submitLabel="Yes! I Want This Offer →"
+                  />
+                </Suspense>
+              </div>
+            </div>
+            <p className="mt-4 text-center text-sm text-white/60">No contracts · Family-friendly · Est. Goleta, CA</p>
+          </div>
+        </section>
 
-      <footer className="border-t border-gray-200 py-6 text-center text-sm text-gray-500">
-        <Link href="/" className="text-primary hover:underline">
-          ← Back to main site
-        </Link>
-      </footer>
+        {/* SECTION 6 — FINAL CTA */}
+        <section className="bg-gradient-to-br from-primary to-primary-dark px-4 py-16 text-center text-white">
+          <h2 className="font-heading text-3xl font-bold uppercase">Ready to start?</h2>
+          <p className="mx-auto mt-3 max-w-xl text-white/95">
+            Join the 101 Jiu Jitsu & Kickboxing family today. Two months of unlimited training — one month&apos;s price.
+          </p>
+          <a
+            href="#offer-form"
+            className="mt-8 inline-block rounded-lg bg-white px-10 py-4 text-lg font-bold uppercase text-secondary shadow-xl transition hover:bg-gray-100"
+          >
+            Yes! I Want 2 Months For The Price of 1 →
+          </a>
+          <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-white/80">
+            <span>✓ No contracts</span>
+            <span>✓ Family-friendly</span>
+            <span>✓ All skill levels</span>
+            <span>✓ Est. Goleta, CA</span>
+          </div>
+        </section>
+      </main>
+      <Footer />
     </>
   );
 }
