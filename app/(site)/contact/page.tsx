@@ -31,7 +31,12 @@ const jsonLd = {
   telephone: SITE.phone,
   email: SITE.email,
   openingHoursSpecification: [
-    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "06:00", closes: "21:00" },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "06:00",
+      closes: "21:00",
+    },
     { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "12:00" },
   ],
   url: "https://101jjkb.com",
@@ -47,9 +52,9 @@ export default function ContactPage() {
         titleAccent="Us"
         subtitle="Ready to start your martial arts journey? Get in touch today for your free 7-day trial."
       />
-      <section className="mx-auto max-w-6xl px-4 py-16">
-        <div className="grid gap-12 lg:grid-cols-2">
-          <div>
+      <section className="mx-auto max-w-6xl px-4 py-10 lg:py-16">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+          <div className="w-full">
             <h2 className="font-heading text-2xl font-bold uppercase text-secondary">Get In Touch</h2>
             <p className="mt-3 text-gray-600">
               We&apos;d love to hear from you. Whether you have questions about our programs, want to schedule a tour,
@@ -104,7 +109,7 @@ export default function ContactPage() {
               </li>
             </ul>
           </div>
-          <div className="rounded-2xl bg-gray-100 p-8">
+          <div className="w-full rounded-2xl bg-gray-100 p-6 md:p-8">
             <h3 className="font-heading text-xl font-bold uppercase text-secondary">Start Your Free Trial</h3>
             <Suspense fallback={<div className="h-40 animate-pulse rounded-lg bg-gray-100" />}>
               <GHLForm
@@ -124,7 +129,7 @@ export default function ContactPage() {
             <iframe
               title="Map — 101 Jiu Jitsu & Kickboxing"
               src={mapEmbedSrc}
-              className="h-[400px] w-full border-0"
+              className="h-[min(400px,50vh)] w-full min-h-[240px] border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

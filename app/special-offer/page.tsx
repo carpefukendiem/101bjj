@@ -24,29 +24,27 @@ export default function SpecialOfferPage() {
     <>
       <Header />
       <main>
-        {/* SECTION 1 — HERO */}
         <section className="bg-[#0a1628]">
           <div className="w-full bg-primary py-[0.6rem] text-center text-[0.9rem] text-white">
             🔥 Limited Time — This Offer Ends Soon
           </div>
-          <div className="px-4 pb-20 pt-32 text-center text-white">
-            <h1 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] font-bold uppercase leading-tight">
+          <div className="px-4 pb-16 pt-28 text-center text-white sm:pb-20 sm:pt-32">
+            <h1 className="font-heading text-[clamp(2rem,8vw,3.5rem)] font-bold uppercase leading-tight">
               Get 2 Months For The Price Of 1
             </h1>
             <p className="mt-3 text-lg text-white/80">New Members Only · No Contracts · Cancel Anytime</p>
             <a
               href="#offer-form"
-              className="mt-8 inline-block rounded-lg bg-primary px-10 py-4 text-lg font-bold uppercase text-white shadow-xl transition hover:bg-primary-dark"
+              className="mt-8 inline-flex w-full items-center justify-center rounded-lg bg-primary px-10 py-4 text-lg font-bold uppercase text-white shadow-xl transition hover:bg-primary-dark sm:w-auto"
             >
               Claim My Offer →
             </a>
-            <p className="mt-4 text-sm text-white/60">
+            <p className="mt-4 text-xs text-white/60 sm:text-sm">
               🔒 No credit card required · Cancel anytime · New members only
             </p>
           </div>
         </section>
 
-        {/* SECTION 2 — WHAT'S INCLUDED */}
         <section className="bg-white py-16">
           <div className="mx-auto max-w-4xl px-4">
             <h2 className="mb-8 text-center font-heading text-3xl font-bold uppercase text-secondary">
@@ -55,12 +53,12 @@ export default function SpecialOfferPage() {
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {includedItems.map((line) => (
                 <div key={line} className="flex items-start">
-                  <span className="mr-3 text-xl text-green-600">✓</span>
+                  <span className="mr-3 shrink-0 text-xl text-green-600">✓</span>
                   <span className="font-medium text-gray-800">{line}</span>
                 </div>
               ))}
             </div>
-            <div className="mt-10 rounded-2xl bg-gradient-to-br from-primary to-primary-dark p-8 text-center text-white">
+            <div className="mt-10 rounded-2xl bg-gradient-to-br from-primary to-primary-dark px-4 py-6 text-center text-white lg:px-8 lg:py-8">
               <p className="text-xl text-white/70 line-through">Normally $149/mo</p>
               <p className="mt-2 font-heading text-3xl font-bold uppercase text-white">
                 You pay for 1 month — get 2 FREE
@@ -72,7 +70,6 @@ export default function SpecialOfferPage() {
           </div>
         </section>
 
-        {/* SECTION 3 — SOCIAL PROOF */}
         <section className="bg-[#f8f9fa] px-4 py-16">
           <h2 className="text-center font-heading text-3xl font-bold uppercase text-secondary">
             Real Results From Real Members
@@ -83,7 +80,6 @@ export default function SpecialOfferPage() {
           <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
             {[1, 2].map((i) => (
               <div key={i}>
-                {/* TODO: Replace with actual video URL from client */}
                 <div className="relative flex aspect-video cursor-pointer items-center justify-center overflow-hidden rounded-2xl bg-[#1a1a2e]">
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 text-3xl text-white">
                     ▶
@@ -95,7 +91,6 @@ export default function SpecialOfferPage() {
           </div>
         </section>
 
-        {/* SECTION 4 — MEAL PLAN */}
         <section className="bg-[#0a1628] px-4 py-16 text-white">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="font-heading text-2xl font-bold uppercase text-white">
@@ -105,31 +100,31 @@ export default function SpecialOfferPage() {
               Members who combine training with structured nutrition see results 3x faster. We&apos;ve partnered with a
               local nutrition program to help you dial in your diet from day one.
             </p>
-            <div className="mt-6 inline-block w-full max-w-lg rounded-xl bg-white/10 p-6">
+            <div className="mt-6 inline-block w-full max-w-lg rounded-xl bg-white/10 px-4 py-6 lg:px-8 lg:py-8">
               <p className="text-lg font-bold text-white">Get 20% off your first month with [Partner Name]</p>
               <p className="mt-1 text-sm text-white/70">Exclusive discount for 101 Jiu Jitsu members only</p>
             </div>
-            {/* TODO: Replace href="#" with actual meal plan partner affiliate/promo link */}
             <a
               href="#"
-              className="mt-6 inline-block rounded-lg border-2 border-white px-8 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-secondary"
+              className="mt-6 inline-flex w-full items-center justify-center rounded-lg border-2 border-white px-8 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-secondary sm:w-auto"
             >
               Add Nutrition To My Plan →
             </a>
           </div>
         </section>
 
-        {/* SECTION 5 — OFFER FORM */}
         <section
           id="offer-form"
-          className="bg-gradient-to-br from-[#0a1628] to-[#1a2a42] px-4 py-20 text-white"
+          className="bg-gradient-to-br from-[#0a1628] to-[#1a2a42] px-4 py-16 text-white sm:py-20"
         >
           <div className="mx-auto max-w-lg">
-            <h2 className="text-center font-heading text-4xl font-bold uppercase text-white">Claim Your Spot</h2>
+            <h2 className="text-center font-heading text-3xl font-bold uppercase text-white sm:text-4xl">
+              Claim Your Spot
+            </h2>
             <p className="mt-3 text-center text-white/80">
               Fill out the form below and we&apos;ll reach out within 24 hours to get you started.
             </p>
-            <div className="mt-10 rounded-2xl bg-white p-8 shadow-2xl">
+            <div className="mx-4 mt-10 rounded-2xl bg-white p-6 shadow-2xl sm:mx-auto sm:p-8">
               <div className="text-gray-900">
                 <Suspense fallback={<div className="h-64 animate-pulse rounded-lg bg-gray-100" />}>
                   <GHLForm
@@ -140,23 +135,24 @@ export default function SpecialOfferPage() {
                 </Suspense>
               </div>
             </div>
-            <p className="mt-4 text-center text-sm text-white/60">No contracts · Family-friendly · Est. Goleta, CA</p>
+            <p className="mt-4 text-center text-xs text-white/60 sm:text-sm">
+              No contracts · Family-friendly · Est. Goleta, CA
+            </p>
           </div>
         </section>
 
-        {/* SECTION 6 — FINAL CTA */}
         <section className="bg-gradient-to-br from-primary to-primary-dark px-4 py-16 text-center text-white">
-          <h2 className="font-heading text-3xl font-bold uppercase">Ready to start?</h2>
+          <h2 className="font-heading text-2xl font-bold uppercase sm:text-3xl">Ready to start?</h2>
           <p className="mx-auto mt-3 max-w-xl text-white/95">
             Join the 101 Jiu Jitsu & Kickboxing family today. Two months of unlimited training — one month&apos;s price.
           </p>
           <a
             href="#offer-form"
-            className="mt-8 inline-block rounded-lg bg-white px-10 py-4 text-lg font-bold uppercase text-secondary shadow-xl transition hover:bg-gray-100"
+            className="mt-8 inline-flex w-full items-center justify-center rounded-lg bg-white px-10 py-4 text-lg font-bold uppercase text-secondary shadow-xl transition hover:bg-gray-100 sm:w-auto"
           >
             Yes! I Want 2 Months For The Price of 1 →
           </a>
-          <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-white/80">
+          <div className="mt-6 flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-white/80 sm:text-sm">
             <span>✓ No contracts</span>
             <span>✓ Family-friendly</span>
             <span>✓ All skill levels</span>

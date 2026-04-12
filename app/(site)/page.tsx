@@ -16,7 +16,7 @@ export default function HomePage() {
   return (
     <>
       <section
-        className="relative flex min-h-[80vh] items-center pt-[120px]"
+        className="relative flex min-h-[100svh] items-center pt-[72px] lg:min-h-[85vh]"
         style={{
           background:
             "linear-gradient(135deg, rgba(10,22,40,0.65), rgba(10,22,40,0.55)), url('/images/gym-1.jpg')",
@@ -24,41 +24,41 @@ export default function HomePage() {
           backgroundPosition: "center",
         }}
       >
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-8 py-24 text-center text-white">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-8 text-center text-white lg:px-8 lg:py-16">
           <div className="mb-6 flex justify-center">
             <Image
               src="/images/logo.webp"
               alt="101 Jiu Jitsu & Kickboxing"
-              width={96}
-              height={96}
+              width={220}
+              height={97}
+              className="h-20 w-auto lg:h-[110px]"
               priority
             />
           </div>
 
-          <p className="hero-eyebrow mb-4 text-base italic opacity-90">
+          <p className="hero-eyebrow mb-4 text-sm italic opacity-90 lg:text-base">
             A Mixed Martial Arts Academy For The Entire Family
           </p>
 
-          <h1 className="mb-6 font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold uppercase leading-tight text-white">
-            101 Jiu Jitsu &{" "}
-            <span className="text-primary">Kickboxing</span>
+          <h1 className="mb-6 font-heading text-[clamp(2rem,8vw,4rem)] font-bold uppercase leading-tight text-white">
+            101 Jiu Jitsu & <span className="text-primary">Kickboxing</span>
           </h1>
 
-          <p className="mx-auto mb-8 max-w-[600px] text-xl text-white/85">
+          <p className="mx-auto mb-8 max-w-full text-base text-white/85 lg:max-w-[600px] lg:text-xl">
             Formerly Paragon Goleta. Same team, same location, same commitment. Build confidence, discipline, and real
             skills with a community that welcomes all ages and levels.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4">
             <Link
               href="/free-trial"
-              className="inline-flex items-center rounded-lg bg-primary px-8 py-3 font-semibold text-white transition hover:bg-primary-dark"
+              className="inline-flex w-full items-center justify-center rounded-lg bg-primary px-8 py-3 font-semibold text-white transition hover:bg-primary-dark sm:w-auto"
             >
               Try A Free Class
             </Link>
             <Link
               href="/schedule"
-              className="inline-flex items-center rounded-lg border-2 border-white bg-transparent px-8 py-3 font-semibold text-white transition hover:bg-white hover:text-secondary"
+              className="inline-flex w-full items-center justify-center rounded-lg border-2 border-white bg-transparent px-8 py-3 font-semibold text-white transition hover:bg-white hover:text-secondary sm:w-auto"
             >
               View Schedule
             </Link>
@@ -66,13 +66,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white py-16">
+      <section className="bg-white py-10 lg:py-16">
         <div className="mx-auto max-w-5xl px-4">
           <div className="mb-8 text-center">
-            <h2 className="font-heading text-3xl font-bold uppercase text-secondary">Gym Highlights</h2>
+            <h2 className="font-heading text-2xl font-bold uppercase text-secondary lg:text-3xl">Gym Highlights</h2>
             <p className="mt-2 text-gray-600">A real training clip from our academy.</p>
           </div>
-          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-black shadow-xl">
+          <div className="overflow-hidden rounded-xl border border-gray-200 bg-black shadow-xl lg:rounded-2xl">
             <video
               className="aspect-video w-full object-cover"
               controls
@@ -87,10 +87,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative bg-gray-100 py-16">
+      <section className="relative bg-gray-100 py-10 lg:py-16">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-10 text-center">
-            <h2 className="font-heading text-3xl font-bold uppercase text-secondary">Program Spotlight</h2>
+            <h2 className="font-heading text-2xl font-bold uppercase text-secondary lg:text-3xl">Program Spotlight</h2>
             <p className="mt-2 text-gray-600">Full-width highlights — same energy as the live site.</p>
           </div>
         </div>
@@ -114,13 +114,13 @@ export default function HomePage() {
         />
       </section>
 
-      <section className="w-full bg-secondary py-16 text-white">
+      <section className="w-full bg-secondary py-10 text-white lg:py-16">
         <div className="mx-auto w-full max-w-none px-4 md:px-8">
-          <h2 className="text-center font-heading text-3xl font-bold uppercase">Why Train at 101?</h2>
+          <h2 className="text-center font-heading text-2xl font-bold uppercase lg:text-3xl">Why Train at 101?</h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-white/80">
             We&apos;re not just another gym. We&apos;re a community dedicated to helping you become your best self.
           </p>
-          <div className="mt-12 grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid grid-cols-1 gap-0 md:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 t: "Expert Coaching",
@@ -139,7 +139,7 @@ export default function HomePage() {
                 d: "Train with a welcoming team that pushes you to be your best every class.",
               },
             ].map((x) => (
-              <div key={x.t} className="border-l-4 border-primary px-6 py-8">
+              <div key={x.t} className="border-l-4 border-primary px-4 py-6 lg:px-6 lg:py-8">
                 <h3 className="font-heading text-lg font-bold uppercase text-primary">{x.t}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-white/80">{x.d}</p>
               </div>
@@ -148,10 +148,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white py-16" aria-labelledby="find-us-heading">
-        <div className="mx-auto max-w-[1280px] px-8">
+      <section className="bg-white py-10 lg:py-16" aria-labelledby="find-us-heading">
+        <div className="mx-auto max-w-[1280px] px-4 lg:px-8">
           <div className="mb-10 text-center">
-            <h2 id="find-us-heading" className="font-heading text-3xl font-bold uppercase text-secondary md:text-4xl">
+            <h2 id="find-us-heading" className="font-heading text-2xl font-bold uppercase text-secondary md:text-4xl">
               Find Us
             </h2>
             <p className="mt-3 text-gray-600">{SITE.address}</p>
@@ -173,14 +173,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-primary to-primary-dark py-16 text-center text-white">
-        <h2 className="font-heading text-3xl font-bold uppercase">Ready to start?</h2>
+      <section className="bg-gradient-to-br from-primary to-primary-dark px-4 py-10 text-center text-white lg:px-8 lg:py-16">
+        <h2 className="font-heading text-2xl font-bold uppercase lg:text-3xl">Ready to start?</h2>
         <p className="mx-auto mt-3 max-w-xl text-white/95">
           Book a free class and see why families choose 101 Jiu Jitsu & Kickboxing.
         </p>
         <Link
           href="/free-trial"
-          className="mt-8 inline-flex rounded-lg bg-white px-8 py-3 font-bold text-secondary shadow-lg hover:bg-gray-100"
+          className="mt-8 inline-flex w-full items-center justify-center rounded-lg bg-white px-8 py-3 font-bold text-secondary shadow-lg hover:bg-gray-100 sm:w-auto"
         >
           Start Free Trial
         </Link>
@@ -201,16 +201,16 @@ function ProgramBand({
   href: string;
 }) {
   return (
-    <div className="relative my-4 flex min-h-[50vh] items-center bg-secondary">
+    <div className="relative my-4 flex min-h-[40vh] items-center bg-secondary lg:min-h-[50vh]">
       <Image src={image} alt="" fill className="object-cover" sizes="100vw" />
       <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 via-secondary/70 to-secondary/40" />
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-20 text-white md:px-6">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-12 text-white lg:px-6 lg:py-20">
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/80">Program Spotlight</p>
-        <h3 className="mt-2 font-heading text-4xl font-bold uppercase md:text-5xl">{title}</h3>
+        <h3 className="mt-2 font-heading text-3xl font-bold uppercase lg:text-5xl">{title}</h3>
         <p className="mt-4 max-w-lg text-lg text-white/90">{description}</p>
         <Link
           href={href}
-          className="mt-8 inline-flex rounded-lg bg-white px-6 py-3 font-semibold text-secondary shadow-lg hover:bg-gray-100"
+          className="mt-8 block w-full rounded-lg bg-white px-6 py-3 text-center font-semibold text-secondary shadow-lg hover:bg-gray-100 sm:inline-flex sm:w-auto sm:text-left"
         >
           Learn More
         </Link>

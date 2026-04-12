@@ -6,10 +6,16 @@ export function Footer() {
   return (
     <footer className="bg-secondary py-12 text-white">
       <div className="mx-auto max-w-7xl px-4 lg:px-6">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 text-center sm:grid-cols-2 sm:text-left lg:grid-cols-4">
           <div>
-            <Link href="/">
-              <Image src="/images/logo.webp" alt="" width={180} height={60} className="h-14 w-auto" />
+            <Link href="/" className="inline-block md:mx-0">
+              <Image
+                src="/images/logo.webp"
+                alt=""
+                width={180}
+                height={60}
+                className="mx-auto h-14 w-auto md:mx-0"
+              />
             </Link>
             <p className="mt-4 text-sm text-white/70">
               Goleta&apos;s premier martial arts academy. Transform your body, master your mind, join our community.
@@ -94,7 +100,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/50 md:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-between gap-2 border-t border-white/10 pt-8 text-center text-xs text-white/50 md:flex-row md:text-left">
           <p>
             © {new Date().getFullYear()} {SITE.name}. All rights reserved.
           </p>

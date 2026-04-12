@@ -97,13 +97,13 @@ export function ScheduleView({ events }: Props) {
 
   return (
     <div>
-      <div className="mb-8 flex flex-wrap justify-center gap-2">
+      <div className="mb-8 flex flex-wrap justify-center gap-1.5 md:gap-2">
         {DAYS_ORDERED.map((day) => (
           <button
             key={day.label}
             type="button"
             onClick={() => setActiveIdx(day.idx)}
-            className={`rounded-lg px-5 py-2 text-sm font-semibold transition-all duration-300 ${
+            className={`rounded-lg px-3 py-2 text-xs font-semibold transition-all duration-300 md:px-5 md:text-sm ${
               activeIdx === day.idx
                 ? "bg-primary text-white shadow-md"
                 : "bg-[#f8f9fa] text-gray-800 hover:bg-gray-200"
@@ -115,8 +115,8 @@ export function ScheduleView({ events }: Props) {
       </div>
 
       <div className="overflow-hidden rounded-xl shadow-lg">
-        <div className="bg-secondary px-6 py-6 text-center text-white">
-          <h3 className="mb-1 font-heading text-[1.75rem] font-bold uppercase leading-tight">
+        <div className="bg-secondary px-4 py-4 text-center text-white md:px-6 md:py-6">
+          <h3 className="mb-1 font-heading text-[1.5rem] font-bold uppercase leading-tight md:text-[1.75rem]">
             {activeDay.fullName}
           </h3>
           <p className="text-sm text-white/80">
@@ -128,7 +128,7 @@ export function ScheduleView({ events }: Props) {
 
         <div className="bg-[#f8f9fa]">
           {activeEvents.length === 0 ? (
-            <div className="px-6 py-16 text-center text-gray-600">
+            <div className="px-4 py-12 text-center text-gray-600 md:px-6 md:py-16">
               <div className="mb-4 text-5xl">😴</div>
               <h4 className="mb-2 text-lg font-semibold text-secondary">No Classes Today</h4>
               <p className="text-sm">Take this time to rest and recover. See you tomorrow!</p>
@@ -141,14 +141,14 @@ export function ScheduleView({ events }: Props) {
               return (
                 <div
                   key={(ev.id as string) || i}
-                  className="grid items-center gap-4 border-b border-[#e9ecef] px-6 py-5 last:border-0 md:grid-cols-[110px_1fr_auto]"
+                  className="flex flex-col gap-1 border-b border-[#e9ecef] px-4 py-4 last:border-0 md:grid md:grid-cols-[110px_1fr_auto] md:items-center md:gap-4 md:px-6 md:py-5"
                 >
-                  <div className="font-heading text-xl font-bold leading-none text-primary">{time}</div>
+                  <div className="font-heading text-lg font-bold leading-none text-primary md:text-xl">{time}</div>
                   <div>
                     <h4 className="mb-0.5 font-semibold text-secondary">{title}</h4>
                     {desc ? <p className="text-sm text-[#6c757d]">{desc}</p> : null}
                   </div>
-                  <div>
+                  <div className="flex justify-end md:block md:justify-start">
                     <span className={getLevelBadgeClass(title)}>{getLevelLabel(title)}</span>
                   </div>
                 </div>
@@ -159,16 +159,16 @@ export function ScheduleView({ events }: Props) {
       </div>
 
       <div
-        className="mt-16 rounded-2xl px-8 py-16 text-center text-white"
+        className="mt-12 rounded-2xl px-4 py-10 text-center text-white lg:mt-16 lg:px-8 lg:py-16"
         style={{ background: "linear-gradient(135deg, #E42416, #C41E1A)" }}
       >
-        <h2 className="mb-4 font-heading text-3xl font-bold uppercase">Ready to Train?</h2>
+        <h2 className="mb-4 font-heading text-2xl font-bold uppercase lg:text-3xl">Ready to Train?</h2>
         <p className="mx-auto mb-8 max-w-xl text-base text-white/95">
           Book your free trial class and experience 101 Jiu Jitsu &amp; Kickboxing. No commitment. No credit card.
         </p>
         <Link
           href="/free-trial"
-          className="inline-flex rounded-lg bg-white px-8 py-3 font-bold text-secondary shadow-lg transition hover:bg-gray-100"
+          className="inline-flex w-full items-center justify-center rounded-lg bg-white px-8 py-3 font-bold text-secondary shadow-lg transition hover:bg-gray-100 sm:w-auto"
         >
           Book Your Free Trial
         </Link>

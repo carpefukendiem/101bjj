@@ -39,7 +39,7 @@ export default async function SchedulePage() {
         titleAccent="SCHEDULE"
         subtitle="Find the perfect class time that fits your schedule. We offer classes 6 days a week."
       />
-      <section className="mx-auto max-w-5xl px-4 py-16">
+      <section className="mx-auto max-w-5xl px-4 py-10 lg:py-16">
         <ScheduleView events={useFallback ? FALLBACK_SCHEDULE : (events ?? FALLBACK_SCHEDULE)} />
       </section>
     </>

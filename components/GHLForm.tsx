@@ -7,6 +7,9 @@ import { getFlatTrackingFields, syncAttributionContext } from "@/lib/ghl-attribu
 
 const REDIRECT_DEFAULT = "https://101jjkb.com/thank-you";
 
+const inputClass =
+  "w-full min-h-[48px] rounded-lg border border-gray-300 px-4 py-3 text-base text-gray-900";
+
 type GHLFormProps = {
   sourceLabel: string;
   workflowVersion: string;
@@ -104,30 +107,15 @@ export function GHLForm({
 
       <div>
         <label className="mb-1 block text-sm font-medium">Full Name *</label>
-        <input
-          name="name"
-          type="text"
-          required
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900"
-        />
+        <input name="name" type="text" required className={inputClass} />
       </div>
       <div>
         <label className="mb-1 block text-sm font-medium">Email *</label>
-        <input
-          name="email"
-          type="email"
-          required
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900"
-        />
+        <input name="email" type="email" required className={inputClass} />
       </div>
       <div>
         <label className="mb-1 block text-sm font-medium">Phone *</label>
-        <input
-          name="phone"
-          type="tel"
-          required
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900"
-        />
+        <input name="phone" type="tel" required className={inputClass} />
       </div>
       <div>
         <label className="mb-1 block text-sm font-medium">Program of Interest *</label>
@@ -136,7 +124,7 @@ export function GHLForm({
           name="program"
           required
           defaultValue={initialProgram}
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900"
+          className={inputClass}
         >
           {PROGRAM_OPTIONS.map((o) => (
             <option key={o.label} value={o.value}>
@@ -148,11 +136,7 @@ export function GHLForm({
       {showMessage ? (
         <div>
           <label className="mb-1 block text-sm font-medium">Message (optional)</label>
-          <textarea
-            name="message"
-            rows={4}
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900"
-          />
+          <textarea name="message" rows={4} className={`${inputClass} min-h-[120px] py-3`} />
         </div>
       ) : null}
 
@@ -165,7 +149,7 @@ export function GHLForm({
       <button
         type="submit"
         disabled={pending}
-        className="w-full rounded-lg bg-primary py-3 font-semibold text-white transition hover:bg-primary-dark disabled:opacity-60"
+        className="w-full min-h-[52px] rounded-lg bg-primary py-3 text-base font-bold text-white transition hover:bg-primary-dark disabled:opacity-60"
       >
         {pending ? "Submitting…" : submitLabel}
       </button>

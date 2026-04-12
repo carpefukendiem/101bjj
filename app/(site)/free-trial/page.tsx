@@ -17,7 +17,7 @@ export default function FreeTrialPage() {
         titleAccent="Free Trial"
         subtitle="Tell us a bit about yourself — we'll reach out to schedule your first class."
       />
-      <section className="mx-auto max-w-lg px-4 py-16">
+      <section className="mx-auto max-w-lg px-4 py-10 lg:py-16">
         <Suspense fallback={<div className="h-40 animate-pulse rounded-lg bg-gray-100" />}>
           <GHLForm
             sourceLabel="Website Free Trial"
@@ -25,7 +25,9 @@ export default function FreeTrialPage() {
             submitLabel="Start My Free Trial →"
           />
         </Suspense>
-        <p className="mt-4 text-center text-sm text-gray-500">🔒 No credit card required. Cancel anytime.</p>
+        <p className="mt-4 text-center text-xs text-gray-500 lg:text-sm">
+          🔒 No credit card required. Cancel anytime.
+        </p>
       </section>
     </>
   );
