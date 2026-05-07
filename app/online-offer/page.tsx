@@ -19,8 +19,21 @@ export default function OnlineOfferPage() {
           🔥 Limited Spots Available — Offer Can End At Any Time
         </div>
 
-        <section className="bg-secondary px-4 py-16 text-center text-white lg:py-24">
-          <div className="mx-auto max-w-2xl">
+        <section
+          className="relative px-4 py-16 text-center text-white lg:py-24"
+          style={{
+            backgroundImage: "url('/images/101-jiu-jitsu-bg.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center top",
+          }}
+        >
+          <div
+            className="absolute inset-0"
+            style={{ background: "rgba(10,22,40,0.83)" }}
+            aria-hidden
+          />
+
+          <div className="relative z-10 mx-auto max-w-2xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
               New Members Only · One-Time Payment · No Contracts
             </p>
