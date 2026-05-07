@@ -142,6 +142,17 @@ export function Header() {
             </Link>
 
             <Link
+              href="/online-offer"
+              className={`rounded-md px-3 py-1.5 text-sm font-bold uppercase tracking-wide transition-colors ${
+                pathname.startsWith("/online-offer") || pathname.startsWith("/offer-success")
+                  ? "bg-green-600 text-white"
+                  : "bg-green-600/90 text-white hover:bg-green-500"
+              }`}
+            >
+              💳 Buy Online
+            </Link>
+
+            <Link
               href="/free-trial"
               className="rounded-md bg-primary px-4 py-2 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-primary-dark"
             >
@@ -243,6 +254,13 @@ export function Header() {
               className="flex min-h-14 items-center justify-center border-b border-white/10 bg-amber-500 px-6 text-center text-lg font-bold uppercase text-secondary"
             >
               🎁 Special Offer
+            </Link>
+
+            <Link
+              href="/online-offer"
+              className="block bg-green-600 px-6 py-4 text-center text-lg font-bold uppercase text-white"
+            >
+              💳 Buy Online — $149
             </Link>
 
             <Link

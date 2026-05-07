@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "**.stripe.com" }],
+  },
   async redirects() {
     return [
       { source: "/book-free-class", destination: "/free-trial", permanent: true },
