@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 import { stripe } from "@/lib/stripe";
 
 export const metadata: Metadata = {
-  title: "Welcome to 101 JJK! Payment Confirmed",
+  title: "Welcome! Payment Confirmed — 3 Months of Training",
   description:
     "Your membership purchase is confirmed. Welcome to 101 Jiu Jitsu & Kickboxing!",
 };
@@ -50,7 +50,7 @@ export default async function OfferSuccessPage({
               {customerName ? `Welcome, ${customerName.split(" ")[0]}!` : "You're In! 🥋"}
             </h1>
 
-            <p className="mb-6 text-xl text-white/90">Your 2-month membership is confirmed.</p>
+            <p className="mb-6 text-xl text-white/90">Your 3-month membership is confirmed.</p>
 
             <div className="mb-8 space-y-3 rounded-2xl bg-white/10 px-6 py-6 text-left">
               {customerName ? (
@@ -73,7 +73,7 @@ export default async function OfferSuccessPage({
               ) : null}
               <div className="flex justify-between text-sm">
                 <span className="text-white/60">Membership</span>
-                <span className="font-semibold">2 Months Unlimited</span>
+                <span className="font-semibold">3 Months Unlimited (paid for 2)</span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-white/60">Free uniform</span>
@@ -97,7 +97,7 @@ export default async function OfferSuccessPage({
                   👕 <strong>Grab your uniform</strong> — we&apos;ll have it ready on day one
                 </li>
                 <li>
-                  🥋 <strong>Start training</strong> — your 2 months begin with your first class
+                  🥋 <strong>Start training</strong> — your 3 months begin with your first class
                 </li>
               </ol>
             </div>

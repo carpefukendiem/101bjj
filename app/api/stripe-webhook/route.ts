@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
     ghl.set("phone", phone);
     ghl.set("source", md.source ?? "Website Online Offer");
     ghl.set("workflow_version", md.workflow_version ?? "online-offer-v1");
-    ghl.set("program", "Online Offer — 2 Months For 1");
+    ghl.set("program", "Online Offer — Pay 2 Months Get 3");
     ghl.set("payment_status", "paid");
     ghl.set("stripe_session_id", stripeSessionId);
     ghl.set("amount_paid", String(amountPaid));

@@ -5,9 +5,9 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "Get 2 Months For The Price of 1 — Pay Online Now",
+  title: "Pay 2 Months, Get 3 — Online Membership Offer",
   description:
-    "Buy your 2-for-1 membership at 101 Jiu Jitsu & Kickboxing online. One payment of $149 gets you 2 full months of unlimited training. Instant confirmation.",
+    "Pay for 2 months of training at 101 Jiu Jitsu & Kickboxing and receive a 3rd month completely free. $298 one-time payment. No contracts, instant confirmation.",
 };
 
 export default function OnlineOfferPage() {
@@ -22,34 +22,34 @@ export default function OnlineOfferPage() {
         <section className="bg-secondary px-4 py-16 text-center text-white lg:py-24">
           <div className="mx-auto max-w-2xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
-              New Members Only · One-Time Payment
+              New Members Only · One-Time Payment · No Contracts
             </p>
             <h1 className="font-heading text-[clamp(2.2rem,7vw,3.8rem)] font-bold uppercase leading-tight text-white">
-              2 Months of Unlimited Training
-              <span className="mt-2 block text-primary">For The Price of 1</span>
+              Pay For 2 Months.
+              <span className="block text-primary">Get 3.</span>
             </h1>
             <p className="mx-auto mt-4 max-w-lg text-lg text-white/80">
-              Pay once online. Show up and start training. No contracts, no credit card on file, no
-              recurring charges.
+              Pay $298 upfront and train for 3 full months — your third month is completely free. No
+              recurring billing, no contracts, no strings attached.
             </p>
 
             <div className="mx-auto mt-8 max-w-sm rounded-2xl bg-white/10 px-6 py-6 backdrop-blur-sm">
-              <p className="text-lg text-white/60 line-through">$298 for 2 months</p>
-              <p className="mt-1 font-heading text-5xl font-bold text-white">$149</p>
-              <p className="mt-1 text-sm text-white/70">one-time payment · 2 full months</p>
+              <p className="text-lg text-white/60 line-through">$447 for 3 months at full price</p>
+              <p className="mt-1 font-heading text-5xl font-bold text-white">$298</p>
+              <p className="mt-1 text-sm text-white/70">one-time · 3 full months · save $149</p>
               <div className="mt-6">
                 <BuyNowButton />
               </div>
               <p className="mt-3 text-xs text-white/50">
-                🔒 Secure payment via Stripe · No recurring charges
+                🔒 Secure payment via Stripe · No recurring charges · Save $149
               </p>
             </div>
 
             <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-white/60">
               <span>✓ Instant confirmation</span>
-              <span>✓ No contracts</span>
-              <span>✓ All programs included</span>
-              <span>✓ Free uniform ($75 value)</span>
+              <span>✓ 3 months of training</span>
+              <span>✓ Save $149</span>
+              <span>✓ Free uniform included</span>
             </div>
           </div>
         </section>
@@ -65,7 +65,12 @@ export default function OnlineOfferPage() {
                   ["🥋", "Unlimited Classes", "Train every day we're open — no class limits"],
                   ["🎯", "Every Program", "BJJ, Kickboxing, Boxing, Wrestling, MMA, TRX, Kids & more"],
                   ["👕", "Free Uniform", "Gi or training gear included — $75 value"],
-                  ["📅", "2 Full Months", "60 days of unlimited access starting from your first class"],
+                  [
+                    "📅",
+                    "3 Full Months",
+                    "90 days of unlimited access starting from your first class — you pay for 2, we give you 3",
+                  ],
+                  ["💰", "Save $149", "Three months for the price of two — one month completely free"],
                   ["🚫", "No Contracts", "One payment, no recurring billing, no lock-in"],
                   ["👨‍👩‍👧", "All Ages & Levels", "Complete beginners to experienced athletes — all welcome"],
                   ["📍", "Goleta Location", "5940 Calle Real — easy access from SB and IV"],
@@ -119,7 +124,7 @@ export default function OnlineOfferPage() {
                   [
                     "3",
                     "Start Training",
-                    "Show up, get your free uniform, and start your 2-month journey. That's it.",
+                    "Show up, get your free uniform, and start your 3-month journey. Your third month is on us.",
                   ],
                 ] as const
               ).map(([num, title, desc]) => (
@@ -147,15 +152,15 @@ export default function OnlineOfferPage() {
                 [
                   [
                     "When does my membership start?",
-                    "Your 2 months begin from the date of your first class — not from when you purchase. So take your time getting started.",
+                    "Your 3 months begin from the date of your first class — not from when you purchase. So take your time getting started.",
                   ],
                   [
                     "Is this really just one payment?",
-                    "Yes. $149 once. No recurring charges, no credit card saved on file, no surprise bills.",
+                    "Yes. $298 once. You get 3 full months of unlimited training. No recurring charges, no credit card saved on file, no surprise bills.",
                   ],
                   [
                     "Can I cancel?",
-                    "There's nothing to cancel — it's a one-time purchase. Your 2 months run and then you're free to continue as a regular member or walk away.",
+                    "There's nothing to cancel — it's a one-time purchase. Your 3 months run their course and then you're free to continue as a regular member at the standard rate, or walk away. No pressure either way.",
                   ],
                   [
                     "What classes can I attend?",
@@ -194,7 +199,9 @@ export default function OnlineOfferPage() {
         >
           <div className="mx-auto max-w-xl">
             <h2 className="mb-3 font-heading text-3xl font-bold uppercase">Ready to Start?</h2>
-            <p className="mb-8 text-white/90">One payment. Two months. Zero risk. Come train with us.</p>
+            <p className="mb-8 text-white/90">
+              One payment. Three months. Save $149. Come train with us.
+            </p>
             <BuyNowButton variant="white" size="large" />
             <p className="mt-4 text-xs text-white/60">
               🔒 Secure checkout via Stripe · No contracts · No recurring billing
