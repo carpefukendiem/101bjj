@@ -19,7 +19,7 @@ export default function HomePage() {
         className="relative flex min-h-[100svh] items-center pt-[72px] lg:min-h-[85vh]"
         style={{
           background:
-            "linear-gradient(135deg, rgba(10,22,40,0.65), rgba(10,22,40,0.55)), url('/images/gym-1.jpg')",
+            "linear-gradient(135deg, rgba(10,22,40,0.72), rgba(10,22,40,0.65)), url('/images/101-jiu-jitsu-bg.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

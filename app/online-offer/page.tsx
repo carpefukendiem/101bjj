@@ -29,7 +29,7 @@ export default function OnlineOfferPage() {
         >
           <div
             className="absolute inset-0"
-            style={{ background: "rgba(10,22,40,0.83)" }}
+            style={{ background: "rgba(10,22,40,0.70)" }}
             aria-hidden
           />
 
