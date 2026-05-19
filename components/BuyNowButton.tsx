@@ -70,7 +70,7 @@ export function BuyNowButton({ size = "default", variant = "red" }: Props) {
             Redirecting to checkout...
           </>
         ) : (
-          <>🛒 Pay 2 Months, Get 3 — $298</>
+          <>☀️ Claim Summer Offer — $298</>
         )}
       </button>
       {error ? <p className="text-sm text-red-500">{error}</p> : null}

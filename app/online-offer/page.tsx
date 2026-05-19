@@ -5,9 +5,9 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "Pay 2 Months, Get 3 — Online Membership Offer",
+  title: "Summer Offer — Pay 2 Months, Get a 3rd Free",
   description:
-    "Pay for 2 months of training at 101 Jiu Jitsu & Kickboxing and receive a 3rd month completely free. $298 one-time payment. No contracts, instant confirmation.",
+    "Limited summer offer at 101 Jiu Jitsu & Kickboxing in Goleta. Pay for 2 months and get your 3rd month completely free. $298 one-time payment. No contracts, instant confirmation.",
 };
 
 export default function OnlineOfferPage() {
@@ -16,7 +16,7 @@ export default function OnlineOfferPage() {
       <Header />
       <main className="pt-[72px]">
         <div className="bg-primary py-2 text-center text-sm font-semibold text-white">
-          🔥 Limited Spots Available — Offer Can End At Any Time
+          ☀️ Summer Offer — Limited Time Only
         </div>
 
         <section
@@ -24,7 +24,7 @@ export default function OnlineOfferPage() {
           style={{
             backgroundImage: "url('/images/101-jiu-jitsu-bg.jpg')",
             backgroundSize: "cover",
-            backgroundPosition: "center top",
+            backgroundPosition: "center 20%",
           }}
         >
           <div
@@ -35,31 +35,31 @@ export default function OnlineOfferPage() {
 
           <div className="relative z-10 mx-auto max-w-2xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
-              New Members Only · One-Time Payment · No Contracts
+              Summer 2025 · New Members Only · No Contracts
             </p>
             <h1 className="font-heading text-[clamp(2.2rem,7vw,3.8rem)] font-bold uppercase leading-tight text-white">
-              Pay For 2 Months.
-              <span className="block text-primary">Get 3.</span>
+              Pay 2 Months.
+              <span className="block text-primary">Get The 3rd Free.</span>
             </h1>
             <p className="mx-auto mt-4 max-w-lg text-lg text-white/80">
-              Pay $298 upfront and train for 3 full months — your third month is completely free. No
-              recurring billing, no contracts, no strings attached.
+              Our best offer of the year. Pay $298 upfront and train for 3 full months — your third
+              month is on us. No recurring billing, no contracts.
             </p>
 
             <div className="mx-auto mt-8 max-w-sm rounded-2xl bg-white/10 px-6 py-6 backdrop-blur-sm">
-              <p className="text-lg text-white/60 line-through">$447 for 3 months at full price</p>
+              <p className="text-lg text-white/60 line-through">$447 for 3 months at regular price</p>
               <p className="mt-1 font-heading text-5xl font-bold text-white">$298</p>
               <p className="mt-1 text-sm text-white/70">one-time · 3 full months · save $149</p>
               <div className="mt-6">
                 <BuyNowButton />
               </div>
               <p className="mt-3 text-xs text-white/50">
-                🔒 Secure payment via Stripe · No recurring charges · Save $149
+                🔒 Secure payment via Stripe · No recurring charges · Save $149 this summer
               </p>
             </div>
 
             <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-white/60">
-              <span>✓ Instant confirmation</span>
+              <span>☀️ Summer special</span>
               <span>✓ 3 months of training</span>
               <span>✓ Save $149</span>
               <span>✓ Free uniform included</span>
@@ -72,6 +72,12 @@ export default function OnlineOfferPage() {
             <h2 className="mb-8 text-center font-heading text-3xl font-bold uppercase text-secondary">
               Everything Included
             </h2>
+            <p
+              className="mb-8 rounded-xl p-4 text-center font-semibold text-white"
+              style={{ backgroundColor: "#f59e0b" }}
+            >
+              ☀️ Summer Offer — Ends Soon · Pay 2 Months, Get Your 3rd Month Free
+            </p>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {(
                 [
@@ -137,7 +143,7 @@ export default function OnlineOfferPage() {
                   [
                     "3",
                     "Start Training",
-                    "Show up, get your free uniform, and start your 3-month journey. Your third month is on us.",
+                    "Show up, get your free uniform, and start your 3-month summer journey. Your third month is completely free.",
                   ],
                 ] as const
               ).map(([num, title, desc]) => (
@@ -165,15 +171,15 @@ export default function OnlineOfferPage() {
                 [
                   [
                     "When does my membership start?",
-                    "Your 3 months begin from the date of your first class — not from when you purchase. So take your time getting started.",
+                    "Your 3 months begin from the date of your first class — not from when you purchase. Take your time, the offer is locked in once you pay.",
                   ],
                   [
                     "Is this really just one payment?",
-                    "Yes. $298 once. You get 3 full months of unlimited training. No recurring charges, no credit card saved on file, no surprise bills.",
+                    "Yes. $298 once this summer. You get 3 full months of unlimited training. No recurring charges, no credit card kept on file.",
                   ],
                   [
                     "Can I cancel?",
-                    "There's nothing to cancel — it's a one-time purchase. Your 3 months run their course and then you're free to continue as a regular member at the standard rate, or walk away. No pressure either way.",
+                    "Nothing to cancel — it's a one-time summer purchase. Your 3 months run and then you decide if you want to continue as a regular member. No pressure.",
                   ],
                   [
                     "What classes can I attend?",
@@ -213,7 +219,7 @@ export default function OnlineOfferPage() {
           <div className="mx-auto max-w-xl">
             <h2 className="mb-3 font-heading text-3xl font-bold uppercase">Ready to Start?</h2>
             <p className="mb-8 text-white/90">
-              One payment. Three months. Save $149. Come train with us.
+              One summer payment. Three months of training. Save $149. Let&apos;s go.
             </p>
             <BuyNowButton variant="white" size="large" />
             <p className="mt-4 text-xs text-white/60">

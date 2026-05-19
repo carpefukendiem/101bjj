@@ -149,7 +149,7 @@ export function Header() {
                   : "bg-green-600/90 text-white hover:bg-green-500"
               }`}
             >
-              💳 Buy Online — $298
+              ☀️ Summer Offer — $298
             </Link>
 
             <Link
@@ -260,7 +260,7 @@ export function Header() {
               href="/online-offer"
               className="block bg-green-600 px-6 py-4 text-center text-lg font-bold uppercase text-white"
             >
-              💳 Buy Online — $298
+              ☀️ Summer Offer — $298
             </Link>
 
             <Link

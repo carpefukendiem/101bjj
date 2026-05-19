@@ -23,8 +23,8 @@ export function buildOfferSessionMetadata(
     out[key] = truncateValue(v);
   };
 
-  put("source", "Website Online Offer");
-  put("workflow_version", "online-offer-v1");
+  put("source", "Website Summer Offer");
+  put("workflow_version", "summer-offer-v1");
   if (extras.customerName) put("customer_name", extras.customerName);
   if (extras.customerPhone) put("customer_phone", extras.customerPhone);
 

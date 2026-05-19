@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
       custom_text: {
         submit: {
           message:
-            "You're paying for 2 months and receiving 3 months of unlimited training — 1 month completely free. A team member will contact you within 24 hours to schedule your first class.",
+            "You're claiming our Summer Offer — pay for 2 months and receive a 3rd month completely free. A team member will contact you within 24 hours to schedule your first class and arrange your free uniform.",
         },
         after_submit: {
           message: "Welcome to 101 Jiu Jitsu & Kickboxing! 🥋",
