@@ -35,7 +35,7 @@ export default function OnlineOfferPage() {
 
           <div className="relative z-10 mx-auto max-w-2xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
-              Summer 2025 · New Members Only · No Contracts
+              Summer 2026 · New Members Only · No Contracts
             </p>
             <h1 className="font-heading text-[clamp(2.2rem,7vw,3.8rem)] font-bold uppercase leading-tight text-white">
               Pay 2 Months.

@@ -57,6 +57,12 @@ export default function HomePage() {
               Try A Free Class
             </Link>
             <Link
+              href="/online-offer"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-amber-500 px-8 py-3 font-semibold text-secondary transition hover:bg-amber-400 sm:w-auto"
+            >
+              ☀️ Summer Offer — $298
+            </Link>
+            <Link
               href="/schedule"
               className="inline-flex w-full items-center justify-center rounded-lg border-2 border-white bg-transparent px-8 py-3 font-semibold text-white transition hover:bg-white hover:text-secondary sm:w-auto"
             >
@@ -178,12 +184,20 @@ export default function HomePage() {
         <p className="mx-auto mt-3 max-w-xl text-white/95">
           Book a free class and see why families choose 101 Jiu Jitsu & Kickboxing.
         </p>
-        <Link
-          href="/free-trial"
-          className="mt-8 inline-flex w-full items-center justify-center rounded-lg bg-white px-8 py-3 font-bold text-secondary shadow-lg hover:bg-gray-100 sm:w-auto"
-        >
-          Start Free Trial
-        </Link>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+          <Link
+            href="/free-trial"
+            className="inline-flex w-full items-center justify-center rounded-lg bg-white px-8 py-3 font-bold text-secondary shadow-lg transition hover:bg-gray-100 sm:w-auto"
+          >
+            Start Free Trial
+          </Link>
+          <Link
+            href="/online-offer"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-amber-500 px-8 py-3 font-bold text-secondary shadow-lg transition hover:bg-amber-400 sm:w-auto"
+          >
+            ☀️ Summer Offer — $298
+          </Link>
+        </div>
       </section>
     </>
   );
