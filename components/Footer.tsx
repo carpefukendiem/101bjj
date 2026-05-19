@@ -70,8 +70,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/special-offer" className="hover:text-primary">
-                  Special Offer
+                <Link href="/online-offer" className="hover:text-primary">
+                  Summer Offer
                 </Link>
               </li>
               <li>

@@ -5,6 +5,7 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      { source: "/special-offer", destination: "/online-offer", permanent: true },
       { source: "/book-free-class", destination: "/free-trial", permanent: true },
       { source: "/book-free-class.html", destination: "/free-trial", permanent: true },
       { source: "/index.html", destination: "/", permanent: true },

@@ -131,17 +131,6 @@ export function Header() {
             {navLink("/contact", "Contact", true)}
 
             <Link
-              href="/special-offer"
-              className={`rounded-md px-3 py-1.5 text-sm font-bold uppercase tracking-wide transition-colors ${
-                pathname.startsWith("/special-offer")
-                  ? "bg-amber-500 text-secondary"
-                  : "bg-amber-500/90 text-secondary hover:bg-amber-400"
-              }`}
-            >
-              🎁 Special Offer
-            </Link>
-
-            <Link
               href="/online-offer"
               className={`rounded-md px-3 py-1.5 text-sm font-bold uppercase tracking-wide transition-colors ${
                 pathname.startsWith("/online-offer") || pathname.startsWith("/offer-success")
@@ -247,13 +236,6 @@ export function Header() {
               }`}
             >
               Contact
-            </Link>
-
-            <Link
-              href="/special-offer"
-              className="flex min-h-14 items-center justify-center border-b border-white/10 bg-amber-500 px-6 text-center text-lg font-bold uppercase text-secondary"
-            >
-              🎁 Special Offer
             </Link>
 
             <Link
