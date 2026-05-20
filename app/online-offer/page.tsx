@@ -7,7 +7,7 @@ import { Header } from "@/components/Header";
 export const metadata: Metadata = {
   title: "Summer Offer — Pay 2 Months, Get a 3rd Free",
   description:
-    "Limited summer offer at 101 Jiu Jitsu & Kickboxing in Goleta. Pay for 2 months and get your 3rd month completely free. $298 one-time payment. No contracts, instant confirmation.",
+    "Limited summer offer at 101 Jiu Jitsu & Kickboxing in Goleta. Pay for 2 months and get your 3rd month completely free. $298 upfront. Auto-continues at regular rate after 3 months — cancel any time.",
 };
 
 export default function OnlineOfferPage() {
@@ -43,13 +43,13 @@ export default function OnlineOfferPage() {
             </h1>
             <p className="mx-auto mt-4 max-w-lg text-lg text-white/80">
               Our best offer of the year. Pay $298 upfront and train for 3 full months — your third
-              month is on us. No recurring billing, no contracts.
+              month is on us. Auto-continues at our regular rate after 3 months. Cancel any time, no questions asked.
             </p>
 
             <div className="mx-auto mt-8 max-w-sm rounded-2xl bg-white/10 px-6 py-6 backdrop-blur-sm">
               <p className="text-lg text-white/60 line-through">$447 for 3 months at regular price</p>
               <p className="mt-1 font-heading text-5xl font-bold text-white">$298</p>
-              <p className="mt-1 text-sm text-white/70">one-time · 3 full months · save $149</p>
+              <p className="mt-1 text-sm text-white/70">$298 upfront · 3 full months · then regular rate</p>
               <div className="mt-6">
                 <BuyNowButton />
               </div>
@@ -94,7 +94,11 @@ export default function OnlineOfferPage() {
                     "90 days of unlimited access starting from your first class — you pay for 2, we give you 3",
                   ],
                   ["💰", "Save $149", "Three months for the price of two — one month completely free"],
-                  ["🚫", "No Contracts", "One payment, no recurring billing, no lock-in"],
+                  [
+                    "🚫",
+                    "No Lock-In",
+                    "Auto-continues after 3 months at the regular rate. Cancel any time before renewal — no fees, no hassle.",
+                  ],
                   ["👨‍👩‍👧", "All Ages & Levels", "Complete beginners to experienced athletes — all welcome"],
                   ["📍", "Goleta Location", "5940 Calle Real — easy access from SB and IV"],
                   ["📞", "Personal Onboarding", "We'll call you within 24hrs to schedule your first class"],
@@ -179,7 +183,7 @@ export default function OnlineOfferPage() {
                   ],
                   [
                     "Is this really just one payment?",
-                    "Yes. $298 once this summer. You get 3 full months of unlimited training. No recurring charges, no credit card kept on file.",
+                    "You pay $298 upfront for 3 full months. After your summer offer ends, your membership automatically continues at our regular monthly rate. Cancel any time before renewal and you won't be charged again.",
                   ],
                   [
                     "Can I cancel?",
@@ -223,7 +227,7 @@ export default function OnlineOfferPage() {
             </p>
             <BuyNowButton variant="white" size="large" />
             <p className="mt-4 text-xs text-white/60">
-              🔒 Secure checkout via Stripe · No contracts · No recurring billing
+              🔒 Secure checkout via Stripe · Auto-continues after 3 months · Cancel any time
             </p>
           </div>
         </section>
