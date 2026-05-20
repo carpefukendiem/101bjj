@@ -32,6 +32,7 @@ export default function HomePage() {
               width={280}
               height={280}
               className="h-[200px] w-auto sm:h-[240px] lg:h-[280px]"
+              sizes="(max-width: 640px) 200px, (max-width: 1024px) 240px, 280px"
               priority
             />
           </div>

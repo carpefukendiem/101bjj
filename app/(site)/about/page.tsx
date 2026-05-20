@@ -39,8 +39,8 @@ export default function AboutPage() {
               className="h-auto w-full rounded-xl object-cover"
             />
             <Image
-              src="/images/gym-2.jpg"
-              alt="Our Goleta martial arts facility"
+              src="/images/101-jiu-jitsu-bg.jpg"
+              alt="The 101 Jiu Jitsu & Kickboxing community"
               width={800}
               height={520}
               className="h-auto w-full rounded-xl object-cover"

@@ -18,6 +18,8 @@ export function PageHero({
 }: PageHeroProps) {
   return (
     <section className="relative flex min-h-[40vh] items-center justify-center overflow-hidden pt-[88px] lg:min-h-[55vh]">
+      {/* Preload hint for hero background */}
+      <link rel="preload" as="image" href={backgroundImage} fetchPriority="high" />
       <Image
         src={backgroundImage}
         alt=""

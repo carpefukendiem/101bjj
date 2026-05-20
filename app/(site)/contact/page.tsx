@@ -19,7 +19,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: SITE.name,
-  image: "https://101jjkb.com/images/logo.png",
+  image: "https://101jjkb.com/images/logo.webp",
   address: {
     "@type": "PostalAddress",
     streetAddress: "5940 Calle Real",
