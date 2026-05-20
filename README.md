@@ -33,4 +33,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Check out our [Next.js deployment documentation](https://vercel.com/docs/app/building-your-application/deploying) for more details.
+
+## Stripe (Summer / online offer)
+
+Checkout reads `STRIPE_SECRET_KEY` and `STRIPE_OFFER_PRICE_ID` from `.env.local` (local) or Vercel env (production). **They must be in the same Stripe mode:**
+
+- **Test:** `sk_test_...` and a Price ID created while the Dashboard is in [test mode](https://dashboard.stripe.com/test/apikeys).
+- **Live:** `sk_live_...` and a Price ID created in live mode for the same account.
+
+If the API returns **“No such price … a similar object exists in test mode, but a live mode key was used”**, your secret key is **live** but the price ID is **test** (or the opposite). Fix by either switching the key to `sk_test_...` for local dev with the existing test price, or creating the offer price in **live** mode and setting `STRIPE_OFFER_PRICE_ID` to that live `price_…` id. After changing env vars, restart the dev server (`Ctrl+C`, then `npm run dev`).
