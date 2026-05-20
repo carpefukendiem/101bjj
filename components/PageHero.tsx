@@ -17,7 +17,7 @@ export function PageHero({
   scheduleStyle,
 }: PageHeroProps) {
   return (
-    <section className="relative flex min-h-[40vh] items-center justify-center overflow-hidden pt-[72px] lg:min-h-[55vh]">
+    <section className="relative flex min-h-[40vh] items-center justify-center overflow-hidden pt-[88px] lg:min-h-[55vh]">
       <Image
         src={backgroundImage}
         alt=""

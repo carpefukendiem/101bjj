@@ -39,7 +39,7 @@ export default async function OfferSuccessPage({
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-secondary pt-[72px]">
+      <main className="min-h-screen bg-secondary pt-[88px]">
         <section className="flex min-h-[80vh] flex-col items-center justify-center px-4 py-16 text-center text-white">
           <div className="mx-auto max-w-lg">
             <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-green-500 text-5xl">

@@ -16,12 +16,12 @@ export default function HomePage() {
   return (
     <>
       <section
-        className="relative flex min-h-[100svh] items-center pt-[72px] lg:min-h-[85vh]"
+        className="relative flex min-h-[100svh] items-center pt-[88px] lg:min-h-[85vh]"
         style={{
           background:
-            "linear-gradient(135deg, rgba(10,22,40,0.72), rgba(10,22,40,0.65)), url('/images/101-jiu-jitsu-bg.jpg')",
+            "linear-gradient(135deg, rgba(10,22,40,0.58), rgba(10,22,40,0.50)), url('/images/101-jiu-jitsu-bg.jpg')",
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "center center",
         }}
       >
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-8 text-center text-white lg:px-8 lg:py-16">
@@ -29,9 +29,9 @@ export default function HomePage() {
             <Image
               src="/images/logo.webp"
               alt="101 Jiu Jitsu & Kickboxing"
-              width={220}
-              height={97}
-              className="h-20 w-auto lg:h-[110px]"
+              width={280}
+              height={280}
+              className="h-[200px] w-auto sm:h-[240px] lg:h-[280px]"
               priority
             />
           </div>

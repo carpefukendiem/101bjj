@@ -69,14 +69,14 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 z-50 w-full bg-[rgba(10,22,40,0.98)] backdrop-blur-[10px]">
-        <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 lg:px-6">
+        <div className="mx-auto flex h-[88px] max-w-7xl items-center justify-between px-4 lg:px-6">
           <Link href="/" className="shrink-0">
             <Image
               src="/images/logo.webp"
               alt="101 Jiu Jitsu & Kickboxing"
-              width={120}
-              height={53}
-              className="h-[53px] w-auto"
+              width={168}
+              height={74}
+              className="h-[74px] w-auto"
               priority
             />
           </Link>
@@ -165,7 +165,7 @@ export function Header() {
       {mobileOpen ? (
         <div
           id="mobile-menu"
-          className="fixed inset-0 top-[72px] z-50 flex flex-col overflow-y-auto bg-secondary lg:hidden"
+          className="fixed inset-0 top-[88px] z-50 flex flex-col overflow-y-auto bg-secondary lg:hidden"
           role="dialog"
           aria-modal="true"
           aria-label="Navigation menu"

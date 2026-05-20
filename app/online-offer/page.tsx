@@ -14,7 +14,7 @@ export default function OnlineOfferPage() {
   return (
     <>
       <Header />
-      <main className="pt-[72px]">
+      <main className="pt-[88px]">
         <div className="bg-primary py-2 text-center text-sm font-semibold text-white">
           ☀️ Summer Offer — Limited Time Only
         </div>
