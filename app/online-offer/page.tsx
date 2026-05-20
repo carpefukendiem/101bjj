@@ -54,7 +54,7 @@ export default function OnlineOfferPage() {
                 <BuyNowButton />
               </div>
               <p className="mt-3 text-xs text-white/50">
-                🔒 Secure payment via Stripe · No recurring charges · Save $149 this summer
+                🔒 Secure payment via Stripe · Auto-continues after 3 months · Cancel any time
               </p>
             </div>
 
@@ -62,7 +62,7 @@ export default function OnlineOfferPage() {
               <span>☀️ Summer special</span>
               <span>✓ 3 months of training</span>
               <span>✓ Save $149</span>
-              <span>✓ Free uniform included</span>
+              <span>✓ Cancel any time</span>
             </div>
           </div>
         </section>
@@ -83,7 +83,11 @@ export default function OnlineOfferPage() {
                 [
                   ["🥋", "Unlimited Classes", "Train every day we're open — no class limits"],
                   ["🎯", "Every Program", "BJJ, Kickboxing, Boxing, Wrestling, MMA, TRX, Kids & more"],
-                  ["👕", "Free Uniform", "Gi or training gear included — $75 value"],
+                  [
+                    "🔄",
+                    "Auto-Continues After 3 Months",
+                    "Seamlessly rolls into our regular membership rate after your 3-month offer. Cancel any time before then — no questions asked.",
+                  ],
                   [
                     "📅",
                     "3 Full Months",
@@ -143,7 +147,7 @@ export default function OnlineOfferPage() {
                   [
                     "3",
                     "Start Training",
-                    "Show up, get your free uniform, and start your 3-month summer journey. Your third month is completely free.",
+                    "Show up and start your 3-month summer journey. Your third month is completely free. After your 3 months, you'll automatically continue at our regular membership rate — cancel any time, no questions asked.",
                   ],
                 ] as const
               ).map(([num, title, desc]) => (
@@ -179,7 +183,7 @@ export default function OnlineOfferPage() {
                   ],
                   [
                     "Can I cancel?",
-                    "Nothing to cancel — it's a one-time summer purchase. Your 3 months run and then you decide if you want to continue as a regular member. No pressure.",
+                    "Yes — cancel any time, no questions asked. After your 3-month summer offer ends, your membership automatically continues at our regular rate. Just let us know before the renewal and we'll cancel it immediately. No fees, no hassle.",
                   ],
                   [
                     "What classes can I attend?",
@@ -188,10 +192,6 @@ export default function OnlineOfferPage() {
                   [
                     "What if I have no experience?",
                     "Perfect. Most of our members start with zero experience. Our fundamentals classes are designed specifically for beginners.",
-                  ],
-                  [
-                    "How do I get my free uniform?",
-                    "We'll have it ready for you on your first day. Just let us know your size when we call to schedule.",
                   ],
                 ] as const
               ).map(([q, a]) => (
