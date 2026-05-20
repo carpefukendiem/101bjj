@@ -25,7 +25,7 @@ const classTypes = [
 export default function WrestlingPage() {
   return (
     <ProgramPage
-      heroImage="/images/kids-grappling-1.jpg"
+      heroImage="/images/kids-grappling-1.webp"
       title="Wrestling"
       subtitle="Develop takedowns, scrambles, and mat wrestling that pair perfectly with jiu-jitsu and MMA goals."
       benefitsSectionTitle="Why Wrestling?"

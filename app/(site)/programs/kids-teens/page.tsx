@@ -27,7 +27,7 @@ const classTypes = [
 export default function KidsTeensPage() {
   return (
     <ProgramPage
-      heroImage="/images/kids-bjj.jpg"
+      heroImage="/images/kids-bjj.webp"
       title="Kids"
       titleAccent="Programs"
       subtitle="Confidence, discipline, and athleticism — taught in a fun, structured environment for ages 4–17."

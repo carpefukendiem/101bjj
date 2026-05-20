@@ -24,7 +24,7 @@ const classTypes = [
 export default function TrxPage() {
   return (
     <ProgramPage
-      heroImage="/images/trx-hero.jpg"
+      heroImage="/images/trx-hero.webp"
       title="TRX"
       titleAccent="Training"
       subtitle="Functional strength and core stability using suspension training — scalable for every level."

@@ -25,7 +25,7 @@ const classTypes = [
 export default function JiuJitsuPage() {
   return (
     <ProgramPage
-      heroImage="/images/jiu-jitsu.jpg"
+      heroImage="/images/jiu-jitsu.webp"
       title="Brazilian"
       titleAccent="Jiu-Jitsu"
       subtitle="Master leverage, control, and submissions with structured classes for beginners through advanced students."

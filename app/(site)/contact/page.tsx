@@ -47,7 +47,7 @@ export default function ContactPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
-        backgroundImage="/images/gym-2.jpg"
+        backgroundImage="/images/gym-2.webp"
         title="Contact"
         titleAccent="Us"
         subtitle="Ready to start your martial arts journey? Get in touch today for your free 7-day trial."

@@ -19,7 +19,7 @@ export default function HomePage() {
         className="relative flex min-h-[100svh] items-center pt-[88px] lg:min-h-[85vh]"
         style={{
           background:
-            "linear-gradient(135deg, rgba(10,22,40,0.58), rgba(10,22,40,0.50)), url('/images/101-jiu-jitsu-bg.jpg')",
+            "linear-gradient(135deg, rgba(10,22,40,0.58), rgba(10,22,40,0.50)), url('/images/101-jiu-jitsu-bg.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center center",
         }}
@@ -85,7 +85,7 @@ export default function HomePage() {
               controls
               playsInline
               preload="metadata"
-              poster="/images/gym-2.jpg"
+              poster="/images/gym-2.webp"
             >
               <source src="/media/101-jiu-jitsu-homepage-video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -105,19 +105,19 @@ export default function HomePage() {
           href="/programs/kickboxing"
           title="Kickboxing"
           description="High-energy classes for adults and teens focused on cardio, striking technique, and confidence under pressure."
-          image="/images/kickboxing-card.jpg"
+          image="/images/kickboxing-card.webp"
         />
         <ProgramBand
           href="/programs/jiu-jitsu"
           title="Brazilian Jiu Jitsu"
           description="Build real grappling skill through fundamentals, positional control, and live training in a supportive team environment."
-          image="/images/jiu-jitsu.jpg"
+          image="/images/jiu-jitsu.webp"
         />
         <ProgramBand
           href="/programs/kids-teens"
           title="Kids Programs"
           description="Age-specific martial arts classes that develop discipline, confidence, and athleticism while keeping training fun and structured."
-          image="/images/kids-bjj.jpg"
+          image="/images/kids-bjj.webp"
         />
       </section>
 

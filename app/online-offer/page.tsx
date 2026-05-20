@@ -22,7 +22,7 @@ export default function OnlineOfferPage() {
         <section
           className="relative px-4 py-16 text-center text-white lg:py-24"
           style={{
-            backgroundImage: "url('/images/101-jiu-jitsu-bg.jpg')",
+            backgroundImage: "url('/images/101-jiu-jitsu-bg.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center 20%",
           }}

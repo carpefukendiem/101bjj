@@ -12,7 +12,7 @@ export default function FreeTrialPage() {
   return (
     <>
       <PageHero
-        backgroundImage="/images/gym-1.jpg"
+        backgroundImage="/images/gym-1.webp"
         title="Start Your"
         titleAccent="Free Trial"
         subtitle="Tell us a bit about yourself — we'll reach out to schedule your first class."

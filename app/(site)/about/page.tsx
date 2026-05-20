@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        backgroundImage="/images/training-photo.jpg"
+        backgroundImage="/images/training-photo.webp"
         title="Our"
         titleAccent="Story"
         subtitle="Building champions in Goleta for over 25 years. Discover the legacy behind 101 Jiu Jitsu & Kickboxing."
@@ -32,14 +32,14 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start">
           <div className="space-y-6">
             <Image
-              src="/images/training-photo.jpg"
+              src="/images/training-photo.webp"
               alt="Training at 101 Jiu Jitsu & Kickboxing"
               width={800}
               height={520}
               className="h-auto w-full rounded-xl object-cover"
             />
             <Image
-              src="/images/101-jiu-jitsu-bg.jpg"
+              src="/images/101-jiu-jitsu-bg.webp"
               alt="The 101 Jiu Jitsu & Kickboxing community"
               width={800}
               height={520}
@@ -124,10 +124,10 @@ export default function AboutPage() {
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { src: "/images/gym-1.jpg", alt: "Martial arts training floor" },
-            { src: "/images/jiu-jitsu.jpg", alt: "Brazilian Jiu-Jitsu class" },
-            { src: "/images/kids-bjj.jpg", alt: "Kids martial arts class" },
-            { src: "/images/training-photo.jpg", alt: "Training session" },
+            { src: "/images/gym-1.webp", alt: "Martial arts training floor" },
+            { src: "/images/jiu-jitsu.webp", alt: "Brazilian Jiu-Jitsu class" },
+            { src: "/images/kids-bjj.webp", alt: "Kids martial arts class" },
+            { src: "/images/training-photo.webp", alt: "Training session" },
           ].map((img) => (
             <div key={img.src} className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
               <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />

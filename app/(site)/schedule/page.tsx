@@ -34,7 +34,7 @@ export default async function SchedulePage() {
     <>
       <PageHero
         scheduleStyle
-        backgroundImage="/images/training-photo.jpg"
+        backgroundImage="/images/training-photo.webp"
         title="CLASS"
         titleAccent="SCHEDULE"
         subtitle="Find the perfect class time that fits your schedule. We offer classes 6 days a week."

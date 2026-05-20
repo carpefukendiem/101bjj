@@ -25,7 +25,7 @@ const classTypes = [
 export default function MmaPage() {
   return (
     <ProgramPage
-      heroImage="/images/training-photo.jpg"
+      heroImage="/images/training-photo.webp"
       title="MMA"
       titleAccent="Training"
       subtitle="Combine striking, wrestling, and grappling into complete mixed martial arts development."

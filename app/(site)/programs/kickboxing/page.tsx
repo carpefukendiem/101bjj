@@ -25,7 +25,7 @@ const classTypes = [
 export default function KickboxingPage() {
   return (
     <ProgramPage
-      heroImage="/images/hero-kickboxing.jpg"
+      heroImage="/images/hero-kickboxing.webp"
       title="Adult"
       titleAccent="Kickboxing"
       subtitle="High-energy striking classes that build conditioning, coordination, and real technique."

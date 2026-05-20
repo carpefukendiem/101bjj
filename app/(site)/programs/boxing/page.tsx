@@ -25,7 +25,7 @@ const classTypes = [
 export default function BoxingPage() {
   return (
     <ProgramPage
-      heroImage="/images/boxing-hero.jpg"
+      heroImage="/images/boxing-hero.webp"
       title="Boxing"
       titleAccent="Fundamentals"
       subtitle="Build the sweet science from the ground up — footwork, head movement, and crisp combinations."
